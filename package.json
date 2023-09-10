@@ -1,0 +1,57 @@
+{
+  "name": "pg-nuxt-vuetify-tailwindcss",
+  "version": "0.0.0",
+  "homepage": "https://pg-nuxt-vuetify-tailwindcss.netlify.app",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pinegrow/pg-nuxt-vuetify-tailwindcss.git"
+  },
+  "scripts": {
+    "dev": "nuxt dev",
+    "build": "nuxt build",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "now": "npm run build && npm run preview",
+    "postinstall": "nuxt prepare",
+    "vue-devtools": "vue-devtools",
+    "lint": "npm run lint:fix && npm run format",
+    "lint:fix": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
+    "format": "prettier --write . '!public'"
+  },
+  "devDependencies": {
+    "@iconify/json": "^2.2.67",
+    "@nuxt/content": "npm:@nuxt/content-edge@latest",
+    "@nuxt/devtools": "^0.7.1",
+    "@nuxt/eslint-config": "^0.1.1",
+    "@nuxt/ui": "^2.8.0",
+    "@nuxtjs/html-validator": "^1.5.2",
+    "@pinegrow/nuxt-module": "^3.0.6",
+    "@pinegrow/tailwindcss-plugin": "^3.0.7",
+    "@pinegrow/vuetify-plugin": "^3.0.13",
+    "@tailwindcss/forms": "^0.5.3",
+    "@tailwindcss/typography": "^0.5.9",
+    "@types/node": "^20.5.0",
+    "@unocss/nuxt": "^0.54.1",
+    "@unocss/preset-icons": "^0.54.1",
+    "@vue/devtools": "^6.5.0",
+    "@vueuse/nuxt": "^10.1.2",
+    "autoprefixer": "^10.4.14",
+    "eslint": "^8.36.0",
+    "eslint-config-prettier": "^8.7.0",
+    "npm-run-all": "^4.1.5",
+    "nuxt": "^3.6.5",
+    "postcss": "^8.4.22",
+    "prettier": "^2.8.4",
+    "rehype-external-links": "^2.1.0",
+    "tailwindcss": "^3.3.1",
+    "typescript": "^5.0.4",
+    "vuetify-nuxt-module": "^0.5.6"
+  },
+  "dependencies": {
+    "@mdi/js": "^7.2.96",
+    "@vueuse/core": "^10.1.2",
+    "sass": "^1.64.2",
+    "vuetify": "^3.3.11"
+  },
+  "web-types": "web-types.json"
+}
