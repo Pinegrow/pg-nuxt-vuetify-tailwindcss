@@ -1,4 +1,4 @@
-# eCommerce Store - Fullstack app with beautiful, accessible components from Vuetify library
+# eCommerce Store - Fullstack app with beautiful, accessible components from Vuetify library, styled with Tailwind CSS
 
 Nuxt 3 Full stack (SPA-SSR) quick start template that pre-includes the [Pinegrow Nuxt Module](https://www.npmjs.com/package/@pinegrow/nuxt-module), [Vuetify](https://vuetifyjs.com/en/introduction/why-vuetify/), [Pinegrow Vuetify Plugin](https://www.npmjs.com/package/@pinegrow/vuetify-plugin) and other goodies for Vue Designer. This template uses the amazing Vuetify component library and features an eCommerce store, where data is fetched via APIs server by server routes (Nitro-powered).
 
