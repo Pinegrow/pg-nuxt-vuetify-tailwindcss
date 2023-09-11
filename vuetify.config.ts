@@ -66,14 +66,22 @@ export default defineVuetifyConfiguration({
 
   display: {
     mobileBreakpoint: 'xs',
+    // thresholds: {
+    //   xs: 0,
+    //   sm: 600,
+    //   md: 960,
+    //   lg: 1280,
+    //   xl: 1920,
+    //   xxl: 2560,
+    // },
     // Using Tailwind ones here
     thresholds: {
       xs: 0,
-      sm: 600,
-      md: 960,
-      lg: 1280,
-      xl: 1920,
-      xxl: 2560,
+      sm: 640,
+      md: 768,
+      lg: 1024,
+      xl: 1280,
+      xxl: 1536,
     },
   },
 
