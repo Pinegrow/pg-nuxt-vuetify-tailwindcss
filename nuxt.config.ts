@@ -6,7 +6,7 @@ export default defineNuxtConfig({
   runtimeConfig: {
     public: {
       title: `Vue Designer`,
-      description: 'Vue Designer Nuxt Vuetify - Quick start template',
+      description: 'Vue Designer Nuxt Vuetify Tailwind CSS',
       author: 'Pinegrow',
       nav: [
         { text: 'Home', link: '/' },
