@@ -1,7 +1,7 @@
 <script setup lang="ts">
-  import checkDarkTheme from '@/composables/dark-color-scheme-check?raw'
-  import type { Script } from '@unhead/schema'
-  type TurboScript = Script & { once: true }
+  // import checkDarkTheme from '@/composables/dark-color-scheme-check?raw'
+  // import type { Script } from '@unhead/schema'
+  // type TurboScript = Script & { once: true }
 
   const fonts =
     'https://fonts.googleapis.com/css?family=DM+Sans:400,500,700|Inter:100,200,300,400,500,600,700,800,900&display=swap'
@@ -31,7 +31,7 @@
       { property: 'keywords', content: route.meta.tags?.toString() },
       { property: 'author', content: 'Pinegrow' },
     ],
-    script: [{ children: checkDarkTheme, once: true } as TurboScript],
+    // script: [{ children: checkDarkTheme, once: true } as TurboScript],
     // prefetch fira font
     link: [
       { rel: 'dns-prefetch', href: googleapis },

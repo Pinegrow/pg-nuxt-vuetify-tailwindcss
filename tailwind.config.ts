@@ -2,7 +2,7 @@ import {
   pg_colors,
   pg_fonts,
   pg_backgrounds,
-} from './themes/pg-vuetify/tokens.cjs'
+} from './themes/pg-tailwindcss/tokens.cjs'
 
 export default {
   darkMode: 'class',

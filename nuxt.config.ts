@@ -43,7 +43,7 @@ export default defineNuxtConfig({
         /* Please ensure that you update the filenames and paths to accurately match those used in your project. */
         configPath: 'tailwind.config.ts',
         cssPath: '@/assets/css/tailwind.css',
-        // restartOnThemeUpdate: true,
+        restartOnThemeUpdate: true,
       },
       // plugins: [
       //   {
@@ -64,6 +64,7 @@ export default defineNuxtConfig({
   ],
   postcss: {
     plugins: {
+      'tailwindcss/nesting': {},
       tailwindcss: {},
       autoprefixer: {},
     },
