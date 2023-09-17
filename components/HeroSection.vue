@@ -1,4 +1,6 @@
 <script setup lang="ts">
+  import { pg_background_urls } from '~~/themes/pg-tailwindcss/tokens.mjs'
+
   const avatarImages = [
     'https://images.unsplash.com/photo-1580489944761-15a19d654956?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wyMDkyMnwwfDF8c2VhcmNofDQyfHxwcm9maWxlfGVufDB8fHx8MTY4NzE2ODcyNnww&ixlib=rb-4.0.3&q=80&w=200',
     'https://images.unsplash.com/photo-1573495612522-d994e72e5f56?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wyMDkyMnwwfDF8c2VhcmNofDE4fHxhZnJpY2FuJTIwY29tcHV0ZXIlMjB3b21hbnxlbnwwfHx8fDE2ODcxNjg5NzV8MA&ixlib=rb-4.0.3&q=80&w=200',
@@ -7,11 +9,32 @@
     // 'https://images.unsplash.com/photo-1573495612522-d994e72e5f56?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wyMDkyMnwwfDF8c2VhcmNofDE4fHxhZnJpY2FuJTIwY29tcHV0ZXIlMjB3b21hbnxlbnwwfHx8fDE2ODcxNjg5NzV8MA&ixlib=rb-4.0.3&q=80&w=200',
     // 'https://images.unsplash.com/photo-1580489944761-15a19d654956?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wyMDkyMnwwfDF8c2VhcmNofDQyfHxwcm9maWxlfGVufDB8fHx8MTY4NzE2ODcyNnww&ixlib=rb-4.0.3&q=80&w=200',
   ]
+
+  const heroImageSrc =
+    pg_background_urls['design-image-large'] ||
+    pg_background_urls['design-image']
+
+  const img = useImage()
+  const _srcset = computed(() => {
+    return img.getSizes(heroImageSrc, {
+      sizes: 'xs:100vw sm:100vw md:100vw lg:100vw xl:100vw',
+      modifiers: {
+        format: 'webp',
+        quality: 70,
+        height: 800,
+      },
+    })
+  })
 </script>
 <template>
   <section>
-    <div
-      class="bg-center bg-cover bg-design-image bg-no-repeat blur-none z-0 lg:bg-design-image-large"
+    <v-img
+      :lazy-src="img(heroImageSrc, { width: 10, quality: 70 })"
+      :src="img(heroImageSrc, { height: 800, quality: 70 })"
+      :srcset="_srcset.srcset"
+      :sizes="_srcset.sizes"
+      :max-height="800"
+      cover
     >
       <div
         class="pb-36 pt-2 px-6 relative rounded-3xl md:pb-48 lg:pb-72 lg:px-12"
@@ -61,7 +84,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </v-img>
   </section>
 </template>
 <style scoped></style>

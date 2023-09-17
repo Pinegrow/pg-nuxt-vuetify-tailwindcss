@@ -58,7 +58,6 @@
       { property: 'author', content: 'Pinegrow' },
     ],
     script: [{ innerHTML: checkDarkTheme, once: true } as TurboScript],
-    // prefetch fira font
     link,
     noscript,
   })
