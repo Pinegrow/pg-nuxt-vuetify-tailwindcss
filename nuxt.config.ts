@@ -33,16 +33,17 @@ export default defineNuxtConfig({
     liveDesigner: {
       iconPreferredCase: 'unocss', // default value (can be removed), nuxt/ui uses the unocss format for icon names
       devtoolsKey: 'devtools', // see plugins/devtools.client.ts
-      vuetify: {
-        configPath: 'vuetify.config.ts',
-        cssPath: '@/assets/css/main.css',
-        utilities: false,
-        restartOnThemeUpdate: true,
-      },
       tailwindcss: {
         /* Please ensure that you update the filenames and paths to accurately match those used in your project. */
         configPath: 'tailwind.config.ts',
         cssPath: '@/assets/css/tailwind.css',
+        restartOnThemeUpdate: true,
+      },
+      vuetify: {
+        configPath: 'vuetify.config.ts',
+        // cssPath: '@/assets/css/main.css',
+        themePath: false, // Set to false so that tailwind Design Panel is used instead of Vuetify
+        utilities: false,
         restartOnThemeUpdate: true,
       },
       // plugins: [
