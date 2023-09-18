@@ -38,14 +38,15 @@ export default defineNuxtConfig({
         /* Please ensure that you update the filenames and paths to accurately match those used in your project. */
         configPath: 'tailwind.config.ts',
         cssPath: '@/assets/css/tailwind.css',
+        // restartOnConfigUpdate: true,
         restartOnThemeUpdate: true,
       },
       vuetify: {
         configPath: 'vuetify.config.ts',
-        // cssPath: '@/assets/css/main.css',
         themePath: false, // Set to false so that tailwind Design Panel is used instead of Vuetify
         utilities: false,
-        restartOnThemeUpdate: true,
+        // restartOnConfigUpdate: true,
+        // restartOnThemeUpdate: true,
       },
       // plugins: [
       //   {
@@ -79,6 +80,7 @@ export default defineNuxtConfig({
       styles: {
         configFile: 'assets/vuetify/settings.scss',
       },
+      includeTransformAssetsUrls: true,
       //...
     },
 
