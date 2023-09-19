@@ -6,13 +6,15 @@
 
   const { optimizeImage } = useOptimizeImage()
 
-  const product = {
-    ...productRaw,
-    imageOptimized: optimizeImage(productRaw.image),
-  }
+  const product = computed(() => {
+    return {
+      ...productRaw.value,
+      imageOptimized: optimizeImage(productRaw.value.image),
+    }
+  })
 
   useHead({
-    title: computed(() => product?.title || ''),
+    title: computed(() => product.value?.title || ''),
   })
 
   const colors = [
@@ -41,7 +43,6 @@
     <div class="flex justify-center max-h-96 xl:max-h-[600px]">
       <div class="-m-4 bg-white p-8 rounded-lg w-full">
         <v-img
-          v-if="product.imageOptimized"
           :src="product.imageOptimized.imageSrc"
           :sizes="product.imageOptimized.imageSizes.sizes"
           class="max-h-full"

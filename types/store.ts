@@ -1,10 +1,11 @@
+import { ImageSizes } from '@nuxt/image'
 type Rating = {
   rate: number
   count: number
 }
 
 type ImageOptimized = {
-  imageSizes?: any
+  imageSizes?: ImageSizes
   imageSrc?: string
   imageLazySrc?: string
 }
