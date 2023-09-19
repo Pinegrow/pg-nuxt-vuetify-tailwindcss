@@ -46,7 +46,6 @@
           :src="product.imageOptimized.imageSrc"
           :sizes="product.imageOptimized.imageSizes.sizes"
           class="max-h-full"
-          :lazy-src="product.imageOptimized.imageLazySrc"
         ></v-img>
       </div>
     </div>

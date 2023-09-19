@@ -15,7 +15,6 @@
             v-if="imageOptimized"
             :src="imageOptimized.imageSrc"
             :srcset="imageOptimized.imageSizes.srcset"
-            :lazy-src="imageOptimized.imageLazySrc"
             :sizes="imageOptimized.imageSizes.sizes"
             height="250"
           >
