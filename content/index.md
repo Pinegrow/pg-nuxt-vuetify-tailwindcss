@@ -1,4 +1,4 @@
-# eCommerce Store - Fullstack app with beautiful, accessible components from Vuetify library
+# eCommerce Store - Fullstack app with beautiful, accessible components from Vuetify library, styled with Tailwind CSS
 
 Nuxt 3 Full stack (SPA-SSR) quick start template that pre-includes the [Pinegrow Nuxt Module](https://www.npmjs.com/package/@pinegrow/nuxt-module), [Vuetify](https://vuetifyjs.com/en/introduction/why-vuetify/), [Pinegrow Vuetify Plugin](https://www.npmjs.com/package/@pinegrow/vuetify-plugin) and other goodies for Vue Designer. This template uses the amazing Vuetify component library and features an eCommerce store, where data is fetched via APIs server by server routes (Nitro-powered).
 
@@ -86,6 +86,10 @@ Check out the [deployment documentation](https://nuxt.com/docs/getting-started/d
 ### UI Frameworks
 
 - [Vuetify](https://vuetifyjs.com/en/introduction/why-vuetify/) - Hundreds of beautifully handcrafted Vue components, easily customizable with a powerful set of utilities, composables and directives.
+  👉 Note: This template turns off Vuetify utilities, and instead use Tailwind CSS instead for styling.
+
+- [Tailwind CSS](https://tailwindcss.com/docs/guides/nuxtjs#3) - The amazing utility-first CSS framework.
+  👉 Note: This template turns off Vuetify utilities, and instead use Tailwind CSS instead for styling. In order to resolve Vuetify's !important in default theme, tailwind.config.ts includes the `important: true` setting.
 
 - [Nuxt Vuetify Module](https://vuetify-nuxt-module.netlify.app/) - This zero-config Nuxt module helps you set up Vuetify in your Nuxt application in seconds. Provides an amazing abstraction over the necessary setup enabling automatic tree-shaking, ability to use Pure CSS icons (UnoCSS Preset icons), supports Nuxt layers and hooks, and more...
   - 👉 provides a new icon-set for Vuetify called `unocss-mdi`. In order to use all iconsets in Vue Designer's icon-picker, follow the instructions displayed in Vue Designer's Config Panel under the **Icon Picker** tab. Also refer to the nuxt module's official documentation [here](https://vuetify-nuxt-module.netlify.app/guide/icons/unocss-preset-icons.html).
