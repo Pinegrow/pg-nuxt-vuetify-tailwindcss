@@ -104,6 +104,7 @@ Check out the [deployment documentation](https://nuxt.com/docs/getting-started/d
 - [Pinegrow Vuetify Plugin](https://www.npmjs.com/package/@pinegrow/vuetify-plugin) - via Design Panel, enables theme customization (optional) and visual controls for Vuetify utilities. Note: This is an addon that's licensed separately to Pinegrow apps (like Vue Designer).
 - [VueUse](https://vueuse.org/) - collection of essential Vue composition utilities.
 - 🍍 [Pinia](https://pinia.vuejs.org/ssr/nuxt.html) stores for global state management via the `@pinia/nuxt module`. Its light-weight, type-safe, extensible, modular with vue-devtools support.
+- [Nuxt Image](https://image.nuxt.com/) - Plug-and-play image optimization for Nuxt apps.
 
 ### Devtools
 
