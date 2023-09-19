@@ -5,6 +5,7 @@ import {
 } from './themes/pg-tailwindcss/tokens.cjs'
 
 export default {
+  important: true,
   darkMode: 'class',
   plugins: [
     require('@tailwindcss/typography'),
