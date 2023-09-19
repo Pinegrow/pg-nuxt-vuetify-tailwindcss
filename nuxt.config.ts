@@ -64,6 +64,7 @@ export default defineNuxtConfig({
   css: [
     '~/assets/css/main.css', // Used for global styles. This file is generally configured as cssPath with Pinegrow Vuetify Plugin
     '~/assets/vuetify/main.scss', // If customizing Vuetify sass variables
+    'lite-youtube-embed/src/lite-yt-embed.css',
   ],
   postcss: {
     plugins: {
@@ -93,7 +94,7 @@ export default defineNuxtConfig({
   },
 
   image: {
-    domains: ['images.unsplash.com'],
+    domains: ['images.unsplash.com', 'fakestoreapi.com'],
     alias: {
       unsplash: 'https://images.unsplash.com',
     },
@@ -106,6 +107,22 @@ export default defineNuxtConfig({
       xl: 1280,
       xxl: 1536,
       '2xl': 1536,
+    },
+    presets: {
+      avatar: {
+        modifiers: {
+          format: 'jpg',
+          width: 80,
+          height: 80,
+        },
+      },
+      // product: {
+      //   modifiers: {
+      //     format: 'jpg',
+      //     // width: 50,
+      //     height: 256,
+      //   },
+      // },
     },
   },
 
@@ -133,5 +150,10 @@ export default defineNuxtConfig({
         prefix: 'i-', // default prefix, do not change
       }),
     ],
+  },
+  vue: {
+    compilerOptions: {
+      isCustomElement: (tag) => tag === 'lite-youtube',
+    },
   },
 })

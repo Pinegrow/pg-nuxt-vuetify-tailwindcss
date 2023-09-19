@@ -2,7 +2,9 @@ export const useProduct = async (productId: number) => {
   // const { data, error } = await useFetch(
   //   `/api/store/external-data/${productId}`,
   // )
-  const { data, error } = await useFetch(`/api/store/local-data/${productId}`)
+  const { data: product, error } = await useFetch(
+    `/api/store/local-data/${productId}`,
+  )
 
   if (error.value) {
     throw createError({
@@ -11,5 +13,5 @@ export const useProduct = async (productId: number) => {
     })
   }
 
-  return data
+  return product.value
 }

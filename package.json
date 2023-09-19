@@ -25,9 +25,9 @@
     "@nuxt/eslint-config": "^0.1.1",
     "@nuxt/image": "^1.0.0-rc.2",
     "@nuxtjs/html-validator": "^1.5.2",
-    "@pinegrow/nuxt-module": "^3.0.18",
-    "@pinegrow/tailwindcss-plugin": "^3.0.14",
-    "@pinegrow/vuetify-plugin": "^3.0.36",
+    "@pinegrow/nuxt-module": "^3.0.19",
+    "@pinegrow/tailwindcss-plugin": "^3.0.17",
+    "@pinegrow/vuetify-plugin": "^3.0.40",
     "@tailwindcss/forms": "^0.5.3",
     "@tailwindcss/typography": "^0.5.9",
     "@types/node": "^20.5.0",
@@ -52,6 +52,7 @@
   "dependencies": {
     "@mdi/js": "^7.2.96",
     "@vueuse/core": "^10.1.2",
+    "lite-youtube-embed": "^0.2.0",
     "sass": "^1.64.2",
     "vuetify": "^3.3.11"
   },

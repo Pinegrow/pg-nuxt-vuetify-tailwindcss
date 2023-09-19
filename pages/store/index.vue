@@ -9,7 +9,15 @@
   })
 
   const data = await useProducts()
-  const { products, categories } = data.value
+  const { products: productsRaw, categories } = data.value
+
+  const { optimizeImage } = useOptimizeImage()
+  const products = productsRaw.map((product) => {
+    return {
+      ...product,
+      imageOptimized: optimizeImage(product.image),
+    }
+  })
 
   const filteredCategories = useState('filteredCategories', () => {
     return new Set()
@@ -38,14 +46,14 @@
     <StoreHeader />
     <v-container>
       <section class="flex items-center justify-center m-4">
-        <span class="font-bold mt-2 text-sm">Filter Category</span>
+        <span class="font-bold text-sm">Filter Category</span>
         <div class="ml-4 mt-2">
           <v-btn
             v-for="(category, index) in categories"
             :key="index"
             :text="category"
             :variant="filteredCategories.has(category) ? 'tonal' : 'outlined'"
-            class="mr-2"
+            class="mb-2 mr-2"
             @click="toggleFilter(category)"
           ></v-btn>
         </div>
@@ -53,13 +61,8 @@
       <section data-pg-name="Products" class="flex flex-wrap justify-center">
         <ProductCard
           v-for="product in filteredProducts"
-          :id="product.id"
           :key="product.id"
-          :image="product.image"
-          :price="product.price"
-          :title="product.title"
-          :badge="product.badge"
-          :shipping="product.shipping"
+          v-bind="product"
         />
       </section>
     </v-container>

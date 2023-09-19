@@ -2,10 +2,17 @@
   const route = useRoute()
   const { id: productId } = route.params
 
-  const product = await useProduct(+productId)
+  const productRaw = await useProduct(+productId)
+
+  const { optimizeImage } = useOptimizeImage()
+
+  const product = {
+    ...productRaw,
+    imageOptimized: optimizeImage(productRaw.image),
+  }
 
   useHead({
-    title: computed(() => product.value?.title || ''),
+    title: computed(() => product?.title || ''),
   })
 
   const colors = [
@@ -28,16 +35,18 @@
   ]
 
   const selected = ref(colors[0])
-
-  const current = computed(() =>
-    colors.find((color) => color.id === selected.value.id),
-  )
 </script>
 <template layout="default">
   <section class="mx-4 my-16 product-details">
     <div class="flex justify-center max-h-96 xl:max-h-[600px]">
       <div class="-m-4 bg-white p-8 rounded-lg w-full">
-        <v-img :src="product.image" class="max-h-full"></v-img>
+        <v-img
+          v-if="product.imageOptimized"
+          :src="product.imageOptimized.imageSrc"
+          :sizes="product.imageOptimized.imageSizes.sizes"
+          class="max-h-full"
+          :lazy-src="product.imageOptimized.imageLazySrc"
+        ></v-img>
       </div>
     </div>
     <div class="mt-8 md:mt-0 md:mx-8">
@@ -78,9 +87,7 @@
         <div>
           <span class="font-bold text-xl">${{ product.price }}</span>
         </div>
-        <div class="md:mr-4">
-          <span>Best Deals Inc.</span>
-        </div>
+        <div class="md:mr-4"><span>Best Deals Inc.</span></div>
       </div>
       <div>
         <div class="mt-4">
@@ -99,7 +106,8 @@
             class="rounded-lg"
             size="x-large"
             block
-            ><span class="py-2 lg:text-lg">Add To Cart</span>
+          >
+            <span class="py-2 lg:text-lg">Add To Cart</span>
           </v-btn-square>
         </div>
       </div>

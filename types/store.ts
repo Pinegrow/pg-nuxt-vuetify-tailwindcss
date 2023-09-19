@@ -3,6 +3,12 @@ type Rating = {
   count: number
 }
 
+type ImageOptimized = {
+  imageSizes?: any
+  imageSrc?: string
+  imageLazySrc?: string
+}
+
 export type Product = {
   id: number
   title: string
@@ -10,6 +16,7 @@ export type Product = {
   description: string
   category: string
   image: string
+  imageOptimized?: ImageOptimized
   rating: Rating
   badge: string
   shipping: string

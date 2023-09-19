@@ -1,38 +1,28 @@
 <script setup lang="ts">
   import { pg_background_urls } from '~~/themes/pg-tailwindcss/tokens.mjs'
 
-  const avatarImages = [
-    'https://images.unsplash.com/photo-1580489944761-15a19d654956?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wyMDkyMnwwfDF8c2VhcmNofDQyfHxwcm9maWxlfGVufDB8fHx8MTY4NzE2ODcyNnww&ixlib=rb-4.0.3&q=80&w=200',
-    'https://images.unsplash.com/photo-1573495612522-d994e72e5f56?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wyMDkyMnwwfDF8c2VhcmNofDE4fHxhZnJpY2FuJTIwY29tcHV0ZXIlMjB3b21hbnxlbnwwfHx8fDE2ODcxNjg5NzV8MA&ixlib=rb-4.0.3&q=80&w=200',
-    'https://images.unsplash.com/photo-1580489944761-15a19d654956?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wyMDkyMnwwfDF8c2VhcmNofDQyfHxwcm9maWxlfGVufDB8fHx8MTY4NzE2ODcyNnww&ixlib=rb-4.0.3&q=80&w=200',
-    // 'https://images.unsplash.com/photo-1573495612522-d994e72e5f56?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wyMDkyMnwwfDF8c2VhcmNofDE4fHxhZnJpY2FuJTIwY29tcHV0ZXIlMjB3b21hbnxlbnwwfHx8fDE2ODcxNjg5NzV8MA&ixlib=rb-4.0.3&q=80&w=200',
-    // 'https://images.unsplash.com/photo-1573495612522-d994e72e5f56?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wyMDkyMnwwfDF8c2VhcmNofDE4fHxhZnJpY2FuJTIwY29tcHV0ZXIlMjB3b21hbnxlbnwwfHx8fDE2ODcxNjg5NzV8MA&ixlib=rb-4.0.3&q=80&w=200',
-    // 'https://images.unsplash.com/photo-1580489944761-15a19d654956?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wyMDkyMnwwfDF8c2VhcmNofDQyfHxwcm9maWxlfGVufDB8fHx8MTY4NzE2ODcyNnww&ixlib=rb-4.0.3&q=80&w=200',
-  ]
+  const { optimizeImage, optimizeImages } = useOptimizeImage()
 
-  const heroImageSrc =
+  const heroImageUrl =
     pg_background_urls['design-image-large'] ||
     pg_background_urls['design-image']
 
-  const img = useImage()
-  const _srcset = computed(() => {
-    return img.getSizes(heroImageSrc, {
-      sizes: 'xs:100vw sm:100vw md:100vw lg:100vw xl:100vw',
-      modifiers: {
-        format: 'webp',
-        quality: 70,
-        height: 800,
-      },
-    })
-  })
+  const heroImageOptimized = optimizeImage(heroImageUrl)
+
+  const avatarImageUrls = [
+    'https://images.unsplash.com/photo-1580489944761-15a19d654956?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wyMDkyMnwwfDF8c2VhcmNofDQyfHxwcm9maWxlfGVufDB8fHx8MTY4NzE2ODcyNnww&ixlib=rb-4.0.3&q=80&w=200',
+    'https://images.unsplash.com/photo-1573495612522-d994e72e5f56?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wyMDkyMnwwfDF8c2VhcmNofDE4fHxhZnJpY2FuJTIwY29tcHV0ZXIlMjB3b21hbnxlbnwwfHx8fDE2ODcxNjg5NzV8MA&ixlib=rb-4.0.3&q=80&w=200',
+    'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixid=M3wyMDkyMnwwfDF8c2VhcmNofDJ8fGF2YXRhcnxlbnwwfHx8fDE2OTUxMDA0OTV8MA&ixlib=rb-4.0.3q=85&fm=jpg&crop=faces&cs=srgb&w=40&h=40&fit=crop',
+  ]
+
+  const avatarImageUrlsOptimized = optimizeImages(avatarImageUrls, 'avatar')
 </script>
 <template>
   <section>
     <v-img
-      :lazy-src="img(heroImageSrc, { width: 10, quality: 70 })"
-      :src="img(heroImageSrc, { height: 800, quality: 70 })"
-      :srcset="_srcset.srcset"
-      :sizes="_srcset.sizes"
+      :src="heroImageOptimized.imageSrc"
+      :srcset="heroImageOptimized.imageSizes.srcset"
+      :sizes="heroImageOptimized.imageSizes.sizes"
       :max-height="800"
       cover
     >
@@ -58,11 +48,11 @@
             <v-card class="mt-4 pb-2 pt-2" color="background">
               <template #text>
                 <v-avatar
-                  v-for="(image, index) in avatarImages"
+                  v-for="(avatar, index) in avatarImageUrlsOptimized"
                   :key="index"
                   size="x-large"
                   alt="avatar"
-                  :image="image"
+                  :image="avatar.imageSrc"
                 ></v-avatar>
               </template>
             </v-card>
