@@ -78,10 +78,19 @@ export default defineNuxtConfig({
   vuetify: {
     moduleOptions: {
       /* If customizing sass variables of vuetify components */
-      styles: {
-        configFile: 'assets/vuetify/settings.scss',
-      },
+      /* If enabling this, set experimental.inlineSSRStyles to false */
+      // styles: {
+      //   configFile: 'assets/vuetify/settings.scss',
+      // },
       includeTransformAssetsUrls: true,
+      // ssrClientHints: {
+      //   reloadOnFirstRequest: false,
+      //   prefersColorScheme: true,
+      //   prefersColorSchemeOptions: {
+      //     useBrowserThemeOnly: false,
+      //   },
+      //   viewportSize: true,
+      // },
       //...
     },
 
@@ -89,9 +98,9 @@ export default defineNuxtConfig({
   },
 
   // Required when customizing Vuetify sass variables via configFile with SSR enabled - https://vuetify-nuxt-module.netlify.app/guide/server-side-rendering.html#vuetify-sass-variables
-  experimental: {
-    inlineSSRStyles: false,
-  },
+  // experimental: {
+  //   inlineSSRStyles: false,
+  // },
 
   image: {
     domains: ['images.unsplash.com', 'fakestoreapi.com'],
