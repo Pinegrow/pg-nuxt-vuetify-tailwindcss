@@ -19,8 +19,8 @@
   // })
 
   const toggleTheme = () => {
-    theme.global.name.value = theme.global.current.value.dark ? 'light' : 'dark'
     toggleDark()
+    theme.global.name.value = isDark.value ? 'dark' : 'light'
   }
 </script>
 <template>
