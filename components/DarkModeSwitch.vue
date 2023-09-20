@@ -26,7 +26,7 @@
 <template>
   <div class="mx-3">
     <v-btn
-      variant="plain"
+      variant="tonal"
       class="!rounded-lg"
       aria-label="Toggle theme"
       @click="toggleTheme"

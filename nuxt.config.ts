@@ -38,13 +38,14 @@ export default defineNuxtConfig({
         /* Please ensure that you update the filenames and paths to accurately match those used in your project. */
         configPath: 'tailwind.config.ts',
         cssPath: '@/assets/css/tailwind.css',
+        // themePath: false, // Set to false so that Design Panel is not used
         // restartOnConfigUpdate: true,
         restartOnThemeUpdate: true,
       },
       vuetify: {
         configPath: 'vuetify.config.ts',
-        themePath: false, // Set to false so that tailwind Design Panel is used instead of Vuetify
         utilities: false,
+        themePath: false, // Set to false so that tailwind Design Panel is used instead of Vuetify
         // restartOnConfigUpdate: true,
         // restartOnThemeUpdate: true,
       },
