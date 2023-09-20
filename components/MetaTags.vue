@@ -3,10 +3,36 @@
   import type { Script } from '@unhead/schema'
   type TurboScript = Script & { once: true }
 
-  const fonts =
-    'https://fonts.googleapis.com/css?family=DM+Sans:400,500,700|Inter:100,200,300,400,500,600,700,800,900&display=swap'
-  const googleapis = 'https://fonts.googleapis.com'
-  const gstatic = 'https://fonts.gstatic.com'
+  import { pg_font_urls } from '~~/themes/pg-tailwindcss/tokens.mjs'
+
+  const link: any = [
+    {
+      rel: 'icon',
+      type: 'image/x-icon',
+      href: '/favicon.ico',
+    },
+  ]
+  const noscript: any = []
+
+  if (pg_font_urls.length) {
+    const googleapis = 'https://fonts.googleapis.com'
+    const gstatic = 'https://fonts.gstatic.com'
+    link.push(
+      { rel: 'dns-prefetch', href: googleapis },
+      { rel: 'dns-prefetch', href: gstatic },
+      { rel: 'preconnect', crossorigin: 'anonymous', href: googleapis },
+      { rel: 'preconnect', crossorigin: 'anonymous', href: gstatic },
+      {
+        rel: 'preload',
+        as: 'style',
+        onload: "this.onload=null;this.rel='stylesheet'",
+        href: pg_font_urls.toString(),
+      },
+    )
+    noscript.push(
+      `<link rel="stylesheet" crossorigin="anonymous" href="${pg_font_urls.toString()}" />`,
+    )
+  }
 
   const config = useRuntimeConfig()
   const { title, description } = config.public
@@ -32,22 +58,8 @@
       { property: 'author', content: 'Pinegrow' },
     ],
     script: [{ innerHTML: checkDarkTheme, once: true } as TurboScript],
-    // prefetch fira font
-    link: [
-      { rel: 'dns-prefetch', href: googleapis },
-      { rel: 'dns-prefetch', href: gstatic },
-      { rel: 'preconnect', crossorigin: 'anonymous', href: googleapis },
-      { rel: 'preconnect', crossorigin: 'anonymous', href: gstatic },
-      {
-        rel: 'preload',
-        as: 'style',
-        onload: "this.onload=null;this.rel='stylesheet'",
-        href: fonts,
-      },
-    ],
-    noscript: [
-      `<link rel="stylesheet" crossorigin="anonymous" href="${fonts}" />`,
-    ],
+    link,
+    noscript,
   })
 </script>
 

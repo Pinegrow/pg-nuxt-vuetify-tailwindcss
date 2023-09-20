@@ -46,16 +46,17 @@ export default defineVuetifyConfiguration({
     VBtn: {
       color: 'primary',
       variant: 'flat',
-      style: 'letter-spacing:.0178571429em',
-      class: '!normal-case !rounded-full',
+      style:
+        'letter-spacing:.0178571429em; text-transform:none !important; border-radius:9999px !important',
+      class: '',
     },
     VBtnSquare: {
       color: 'primary',
       variant: 'flat',
       minHeight: '40px',
-      style: 'padding-left:12px; padding-right:12px;',
-      class:
-        '!text-sm !font-medium leading-5 !tracking-[.0178571429em]  !normal-case !rounded-lg',
+      style:
+        'padding-left:12px; padding-right:12px; font-size: 0.875rem !important;line-height: 1.25rem !important;font-weight: 500 !important;line-height: 1.25rem;letter-spacing: .0178571429em !important; text-transform:none !important; border-radius:0.5rem !important;',
+      class: '',
     },
     VTextField: {
       color: 'primary',
