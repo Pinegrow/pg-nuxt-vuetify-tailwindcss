@@ -83,14 +83,14 @@ export default defineNuxtConfig({
       //   configFile: 'assets/vuetify/settings.scss',
       // },
       includeTransformAssetsUrls: true,
-      // ssrClientHints: {
-      //   reloadOnFirstRequest: false,
-      //   prefersColorScheme: true,
-      //   prefersColorSchemeOptions: {
-      //     useBrowserThemeOnly: false,
-      //   },
-      //   viewportSize: true,
-      // },
+      ssrClientHints: {
+        reloadOnFirstRequest: false,
+        prefersColorScheme: true,
+        prefersColorSchemeOptions: {
+          useBrowserThemeOnly: false,
+        },
+        viewportSize: true,
+      },
       //...
     },
 

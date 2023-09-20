@@ -45,7 +45,7 @@
     "rehype-external-links": "^2.1.0",
     "tailwindcss": "^3.3.1",
     "typescript": "^5.0.4",
-    "vuetify-nuxt-module": "^0.5.10"
+    "vuetify-nuxt-module": "^0.5.11"
   },
   "dependencies": {
     "@mdi/js": "^7.2.96",
