@@ -1,7 +1,7 @@
 <script setup lang="ts">
-  import checkDarkTheme from '@/composables/dark-color-scheme-check?raw'
-  import type { Script } from '@unhead/schema'
-  type TurboScript = Script & { once: true }
+  // import checkDarkTheme from '@/composables/dark-color-scheme-check?raw'
+  // import type { Script } from '@unhead/schema'
+  // type TurboScript = Script & { once: true }
 
   import { pg_font_urls } from '~~/themes/pg-tailwindcss/tokens.mjs'
 
@@ -47,17 +47,20 @@
     twitterCard: 'summary_large_image',
   })
 
+  const name = useNuxtApp().$vuetify.theme.global.name
+
   useHead({
     title: computed(() => route.meta.title),
     titleTemplate: (titleChunk) => {
       return titleChunk ? `${titleChunk} - ${title}` : title
     },
-    htmlAttrs: { lang: 'en-US' },
+    htmlAttrs: { lang: 'en-US', class: name },
     meta: [
       { property: 'keywords', content: route.meta.tags?.toString() },
       { property: 'author', content: 'Pinegrow' },
     ],
-    script: [{ innerHTML: checkDarkTheme, once: true } as TurboScript],
+    // Not required for Vuetify
+    // script: [{ innerHTML: checkDarkTheme, once: true } as TurboScript],
     link,
     noscript,
   })

@@ -83,7 +83,7 @@ export default defineNuxtConfig({
       // styles: {
       //   configFile: 'assets/vuetify/settings.scss',
       // },
-      includeTransformAssetsUrls: true,
+      // includeTransformAssetsUrls: true, // default is true
       ssrClientHints: {
         reloadOnFirstRequest: false,
         prefersColorScheme: true,

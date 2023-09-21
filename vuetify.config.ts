@@ -37,6 +37,7 @@ export default defineVuetifyConfiguration({
 
   aliases: {
     VBtnSquare: 'VBtn', // VBtn is automatically added as a global component
+    VIconBtn: 'VBtn',
   },
 
   defaults: {
@@ -56,6 +57,14 @@ export default defineVuetifyConfiguration({
       minHeight: '40px',
       style:
         'padding-left:12px; padding-right:12px; font-size: 0.875rem !important;line-height: 1.25rem !important;font-weight: 500 !important;line-height: 1.25rem;letter-spacing: .0178571429em !important; text-transform:none !important; border-radius:0.5rem !important;',
+      class: '',
+    },
+    VIconBtn: {
+      color: 'primary',
+      variant: 'flat',
+      minHeight: '40px',
+      style:
+        'padding-left:12px; padding-right:12px; font-size: 0.875rem !important;line-height: 1.25rem !important;font-weight: 500 !important;line-height: 1.25rem;letter-spacing: .0178571429em !important; text-transform:none !important; border-radius:0.5rem !important;width: inherit;height: inherit;',
       class: '',
     },
     VTextField: {

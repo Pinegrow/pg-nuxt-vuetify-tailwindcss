@@ -18,9 +18,12 @@
   //   return false
   // })
 
+  // const vuetify = useNuxtApp().$vuetify
+
   const toggleTheme = () => {
     toggleDark()
     theme.global.name.value = isDark.value ? 'dark' : 'light'
+    // vuetify.theme.global.name.value = isDark.value ? 'dark' : 'light'
   }
 </script>
 <template>
