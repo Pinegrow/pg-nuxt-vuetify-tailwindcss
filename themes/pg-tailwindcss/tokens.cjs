@@ -219,10 +219,6 @@ const pg_fonts = {
   serif: ["'Inter', sans-serif"],
 }
 
-const pg_font_urls = [
-  'https://fonts.googleapis.com/css?family=DM+Sans:400,500,700|Inter:100,200,300,400,500,600,700,800,900&display=swap',
-]
-
 const pg_backgrounds = {
   'design-image':
     "url('https://images.unsplash.com/photo-1604671801908-6f0c6a092c05?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wyMDkyMnwwfDF8c2VhcmNofDQxfHxzaG9lc3xlbnwwfHx8fDE2ODcxNjk3Njd8MA&ixlib=rb-4.0.3&q=80&w=1080')",
@@ -230,18 +226,22 @@ const pg_backgrounds = {
     "url('https://images.unsplash.com/photo-1604671801908-6f0c6a092c05?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wyMDkyMnwwfDF8c2VhcmNofDQxfHxzaG9lc3xlbnwwfHx8fDE2ODcxNjk3Njd8MA&ixlib=rb-4.0.3&q=80&w=2000')",
 }
 
+/* Pinegrow generated Design Panel End */
+
+/* eslint-disable */
+/* prettier-disable */
+/* @ts-nocheck */
+
+const pg_font_urls = [
+  'https://fonts.googleapis.com/css?family=DM+Sans:400,500,700|Inter:100,200,300,400,500,600,700,800,900&display=swap',
+]
+
 const pg_background_urls = {
   'design-image':
     'https://images.unsplash.com/photo-1604671801908-6f0c6a092c05?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wyMDkyMnwwfDF8c2VhcmNofDQxfHxzaG9lc3xlbnwwfHx8fDE2ODcxNjk3Njd8MA&ixlib=rb-4.0.3&q=80&w=1080',
   'design-image-large':
     'https://images.unsplash.com/photo-1604671801908-6f0c6a092c05?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wyMDkyMnwwfDF8c2VhcmNofDQxfHxzaG9lc3xlbnwwfHx8fDE2ODcxNjk3Njd8MA&ixlib=rb-4.0.3&q=80&w=2000',
 }
-
-/* Pinegrow generated Design Panel End */
-
-/* eslint-disable */
-/* prettier-disable */
-/* @ts-nocheck */
 
 module.exports = {
   pg_colors,
