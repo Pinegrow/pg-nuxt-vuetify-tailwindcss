@@ -47,7 +47,7 @@ export default defineNuxtConfig({
         utilities: false,
         themePath: false, // Set to false so that tailwind Design Panel is used instead of Vuetify
         // restartOnConfigUpdate: true,
-        // restartOnThemeUpdate: true,
+        restartOnThemeUpdate: true,
       },
       // plugins: [
       //   {
