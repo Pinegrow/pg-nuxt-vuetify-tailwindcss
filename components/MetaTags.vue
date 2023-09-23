@@ -3,13 +3,14 @@
   // import type { Script } from '@unhead/schema'
   // type TurboScript = Script & { once: true }
 
+  import site from '@/site'
   import { pg_font_urls } from '~~/themes/pg-tailwindcss/tokens.mjs'
 
   const link: any = [
     {
       rel: 'icon',
       type: 'image/x-icon',
-      href: '/favicon.ico',
+      href: '/favicon.svg',
     },
   ]
   const noscript: any = []
@@ -34,32 +35,38 @@
     )
   }
 
-  const config = useRuntimeConfig()
-  const { title, description } = config.public
+  const { title, description, url, image } = site
+
   const route = useRoute()
 
   useServerSeoMeta({
     title,
-    ogTitle: title,
     description,
+    ogTitle: title,
     ogDescription: description,
-    ogImage: 'https://example.com/image.png',
-    twitterCard: 'summary_large_image',
+    ogImage: image,
+    ogImageAlt: title,
+    // og:image:width
+    // og:image:height
+    // og:image:alt
+    // og:image: type
+    // og:image: secure_url
+    ogUrl: url,
+    ogSiteName: title,
+    // og: locale
+    // og: type
   })
-
-  const name = useNuxtApp().$vuetify.theme.global.name
 
   useHead({
     title: computed(() => route.meta.title),
     titleTemplate: (titleChunk) => {
       return titleChunk ? `${titleChunk} - ${title}` : title
     },
-    htmlAttrs: { lang: 'en-US', class: name },
+    htmlAttrs: { lang: 'en-US' },
     meta: [
       { property: 'keywords', content: route.meta.tags?.toString() },
       { property: 'author', content: 'Pinegrow' },
     ],
-    // Not required for Vuetify
     // script: [{ innerHTML: checkDarkTheme, once: true } as TurboScript],
     link,
     noscript,
@@ -68,13 +75,12 @@
 
 <template>
   <Head>
-    <Meta
-      name="twitter:image"
-      content="https://icons.vuetelescope.com/framework/nuxt.svg"
-    />
-    <Meta name="twitter:image:alt" content="Nuxt" />
-    <Meta name="twitter:site" content="@pinegrow" />
-    <Meta name="twitter:card" content="summary" />
-    <Link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <Meta name="twitter:title" :content="title" />
+    <Meta name="twitter:description" :content="description" />
+    <Meta name="twitter:image" :content="image" />
+    <Meta name="twitter:image:alt" :content="title" />
+    <Meta name="twitter:site" :content="url" />
+    <Meta name="twitter:card" content="summary_large_image" />
+    <!-- <Meta name="twitter:card" content="summary" /> -->
   </Head>
 </template>
