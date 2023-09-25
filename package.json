@@ -58,8 +58,5 @@
     "typescript": "^5.0.4",
     "vuetify-nuxt-module": "^0.5.11"
   },
-  "overrides": {
-    "vue": "latest"
-  },
   "web-types": "web-types.json"
 }
