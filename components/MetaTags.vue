@@ -1,7 +1,7 @@
 <script setup lang="ts">
-  // import checkDarkTheme from '@/composables/dark-color-scheme-check?raw'
-  // import type { Script } from '@unhead/schema'
-  // type TurboScript = Script & { once: true }
+  import checkDarkTheme from '@/composables/dark-color-scheme-check?raw'
+  import type { Script } from '@unhead/schema'
+  type TurboScript = Script & { once: true }
 
   import site from '@/site'
   import image from '@/screenshots/image.jpg'
@@ -36,26 +36,35 @@
     )
   }
 
-  const { title, description, url } = site
-
+  const { title, description, url, author } = site
   const route = useRoute()
 
   useServerSeoMeta({
-    title,
+    // charset: 'utf-8',
+    // author,
+    // viewport: 'width=device-width, initial-scale=1',
+    // keywords: route.meta.tags?.toString(),
+    // title,
     description,
-    ogTitle: title,
-    ogDescription: description,
-    ogImage: image,
-    ogImageAlt: title,
+    // ogTitle: title,
+    // ogDescription: description,
+    // ogImage: image,
+    // ogImageAlt: title,
     // og:image:width
     // og:image:height
     // og:image:alt
     // og:image: type
     // og:image: secure_url
-    ogUrl: url,
-    ogSiteName: title,
+    // ogUrl: url,
+    // ogSiteName: title,
     // og: locale
     // og: type
+    // twitterTitle: title,
+    // twitterDescription: description,
+    // twitterImage: image,
+    // twitterImageAlt: title,
+    // twitterSite: url,
+    // twitterCard: 'summary_large_image',
   })
 
   useHead({
@@ -65,10 +74,15 @@
     },
     htmlAttrs: { lang: 'en-US' },
     meta: [
-      { property: 'keywords', content: route.meta.tags?.toString() },
-      { property: 'author', content: 'Pinegrow' },
+      { name: 'charset', content: 'utf-8' },
+      {
+        name: 'viewport',
+        content: 'width=device-width, initial-scale=1',
+      },
+      { name: 'author', content: author },
+      { name: 'keywords', content: route.meta.tags?.toString() },
     ],
-    // script: [{ innerHTML: checkDarkTheme, once: true } as TurboScript],
+    script: [{ innerHTML: checkDarkTheme, once: true } as TurboScript],
     link,
     noscript,
   })
@@ -76,6 +90,12 @@
 
 <template>
   <Head>
+    <Meta property="og:title" :content="title" />
+    <Meta property="og:description" :content="description" />
+    <Meta property="og:image" :content="image" />
+    <Meta property="og:image:alt" :content="title" />
+    <Meta property="og:url" :content="url" />
+    <Meta property="og:site-name" content="summary_large_image" />
     <Meta name="twitter:title" :content="title" />
     <Meta name="twitter:description" :content="description" />
     <Meta name="twitter:image" :content="image" />
