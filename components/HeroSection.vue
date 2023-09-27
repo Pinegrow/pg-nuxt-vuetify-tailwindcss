@@ -19,13 +19,14 @@
 </script>
 <template>
   <section>
-    <v-img
+    <!-- <v-img
       :src="heroImageOptimized.imageSrc"
       :srcset="heroImageOptimized.imageSizes.srcset"
       :sizes="heroImageOptimized.imageSizes.sizes"
       :max-height="800"
       cover
-    >
+    > -->
+    <v-img :src="heroImageUrl" :max-height="800" cover>
       <div
         class="pb-36 pt-2 px-6 relative rounded-3xl md:pb-48 lg:pb-72 lg:px-12"
       >
@@ -47,12 +48,19 @@
             </h5>
             <v-card class="mt-4 pb-2 pt-2" color="background">
               <template #text>
-                <v-avatar
+                <!-- <v-avatar
                   v-for="(avatar, index) in avatarImageUrlsOptimized"
                   :key="index"
                   size="x-large"
                   alt="avatar"
                   :image="avatar.imageSrc"
+                ></v-avatar> -->
+                <v-avatar
+                  v-for="(avatar, index) in avatarImageUrls"
+                  :key="index"
+                  size="x-large"
+                  alt="avatar"
+                  :image="avatar"
                 ></v-avatar>
               </template>
             </v-card>

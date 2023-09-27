@@ -1,6 +1,6 @@
 <script setup lang="ts">
   import { Product } from '../types/store'
-  const { id, title, price, imageOptimized, badge, shipping } =
+  const { id, title, price, image, imageOptimized, badge, shipping } =
     defineProps<Product>()
 </script>
 <template>
@@ -11,14 +11,15 @@
       </div>
       <div class="h-64 relative">
         <div class="-m-4 bg-white p-8 rounded-lg">
-          <v-img
+          <!-- <v-img
             v-if="imageOptimized"
             :src="imageOptimized.imageSrc"
             :srcset="imageOptimized.imageSizes.srcset"
             :sizes="imageOptimized.imageSizes.sizes"
             height="250"
           >
-          </v-img>
+          </v-img> -->
+          <v-img v-if="image" :src="image" height="250"> </v-img>
         </div>
       </div>
       <v-card-text class="mt-14">
