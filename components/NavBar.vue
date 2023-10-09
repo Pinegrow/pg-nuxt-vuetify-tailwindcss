@@ -1,53 +1,133 @@
 <script setup lang="ts">
-  import { computed } from 'vue'
-  import { useNav } from '@/composables/nav'
+  const { isMobileMenuOpen, isSecondaryMenuOpen } = useMobileMenu()
+  const { navlinksPrimary, navlinksSecondary, currentPath } = useNav()
 
-  const { navlinks, currentPath } = useNav()
-  const desktopNavTabs = computed(() => {
-    return navlinks.value.slice(0, 2)
-  })
-  const mobileNavTabs = computed(() => {
-    return navlinks.value.slice(2, navlinks.value.length)
-  })
+  const dropdownItems = navlinksSecondary.value.map((navlink) => ({
+    slot: navlink.link.replace(/^\//, '').replaceAll('/', '-'),
+    label: navlink.text,
+    icon: navlink.icon,
+    to: navlink.link,
+    activeClass: 'text-primary',
+  }))
 </script>
 <template>
-  <div class="w-full">
-    <nav>
-      <div class="container mx-auto px-4 sm:px-6">
-        <div class="flex h-24 items-center justify-between">
-          <div class="flex items-center justify-between w-full">
-            <div class="flex flex-shrink-0 items-center">
-              <NuxtLink to="/" class="text-primary-600 dark:text-primary-200">
-                <h5 class="font-extrabold mb-0 ml-2">Vue Designer</h5>
-              </NuxtLink>
-            </div>
-            <NavBarDesktopMenu
-              :navlinks="desktopNavTabs"
-              :current-path="currentPath"
-              class="hidden sm:flex sm:ml-6"
-            />
-          </div>
-          <DarkModeSwitch />
-          <div class="-mr-2 items-center relative">
-            <NavBarMobileMenuButton
-              v-if="mobileNavTabs.length"
-              class="hidden sm:block"
-            />
-            <NavBarMobileMenuButton v-if="navlinks.length" class="sm:hidden" />
-            <NavBarMobileMenu
-              class="hidden sm:flex sm:justify-end absolute right-0 mt-4"
-              :navlinks="mobileNavTabs"
-              :current-path="currentPath"
-            />
-          </div>
-        </div>
+  <nav class="container mx-auto px-4">
+    <div class="h-full navbar-grid py-4">
+      <div style="grid-area: logo" class="flex justify-center">
+        <TheLogo />
       </div>
-      <NavBarMobileMenu
-        class="sm:hidden"
-        :navlinks="navlinks"
-        :current-path="currentPath"
-      />
-    </nav>
-  </div>
+      <div
+        data-pg-name="Hamburger"
+        style="grid-area: hamburger"
+        class="md:hidden"
+      >
+        <TheHamburger @click="isMobileMenuOpen = true"></TheHamburger>
+      </div>
+      <div
+        data-pg-name="PrimaryDesktopNav"
+        style="grid-area: primary-nav"
+        class="hidden md:flex"
+      >
+        <PrimaryNav class="md:w-full" />
+      </div>
+      <div
+        data-pg-name="Searchbox"
+        style="grid-area: search"
+        class="flex items-center"
+      >
+        <v-form class="w-full">
+          <v-text-field
+            label="Search..."
+            append-inner-icon="i-material-symbols-search-rounded"
+            hide-details
+            variant="outlined"
+            class="w-full"
+          ></v-text-field>
+        </v-form>
+      </div>
+      <div
+        data-pg-name="Profile"
+        class="flex justify-end space-x-2 md:items-center"
+      >
+        <ProfileActions class="hidden md:flex" />
+        <v-menu>
+          <template #activator="{ props }">
+            <v-btn
+              text="My Button"
+              :icon="true"
+              v-bind="props"
+              variant="tonal"
+              class="md:ml-2"
+            >
+              <v-avatar
+                alt="Avatar"
+                image="https://avatars.githubusercontent.com/u/73772701?v=4"
+                size="large"
+              ></v-avatar>
+            </v-btn>
+          </template>
+          <v-card min-width="300">
+            <v-list>
+              <v-list-item>
+                <div class="flex flex-col items-center my-1 space-x-1 w-full">
+                  <ProfileActions class="flex md:hidden" />
+                  <v-btn class="font-bold my-4 w-fit md:my-2"
+                    >Sign In / Join Us</v-btn
+                  >
+                </div>
+              </v-list-item>
+            </v-list>
+            <v-divider></v-divider>
+            <v-list>
+              <v-list-item
+                v-for="(item, index) in dropdownItems"
+                :key="index"
+                :value="index"
+                :to="item.to"
+                :title="item.label"
+                :prepend-icon="item.icon"
+              >
+              </v-list-item>
+            </v-list>
+          </v-card>
+        </v-menu>
+      </div>
+    </div>
+    <v-navigation-drawer
+      v-model="isMobileMenuOpen"
+      data-pg-name="PrimaryMobileNav"
+      style="grid-area: primary-nav"
+      class="w-80 md:hidden"
+      location="left"
+      temporary
+    >
+      <PrimaryNav class="m-4" />
+    </v-navigation-drawer>
+  </nav>
 </template>
-<style scoped></style>
+<style scoped>
+  .navbar-grid {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: auto auto;
+    grid-template-areas: 'hamburger logo profile' 'search search search';
+    gap: 20px;
+  }
+  @media (min-width: 768px) {
+    .navbar-grid {
+      display: grid;
+      grid-template-columns: auto auto auto;
+      grid-template-rows: auto auto;
+      grid-template-areas: 'logo search profile' 'primary-nav primary-nav primary-nav';
+      gap: 20px;
+    }
+  }
+  @media (min-width: 1280px) {
+    .navbar-grid {
+      display: grid;
+      grid-template-columns: auto auto auto auto;
+      grid-template-rows: auto;
+      grid-template-areas: 'logo primary-nav search profile';
+    }
+  }
+</style>

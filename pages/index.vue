@@ -11,8 +11,10 @@
 <template>
   <main>
     <HeroSection />
-    <AboutTemplate />
-    <WalkThrough />
+    <div class="container mx-auto pt-8">
+      <LaunchSale class="mt-8" />
+      <HotDeals class="mt-8" />
+    </div>
   </main>
 </template>
 <style scoped></style>

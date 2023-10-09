@@ -133,14 +133,4 @@
       grid-template-areas: 'image details';
     }
   }
-  .product-card {
-    height: 100%;
-    max-width: 400px;
-  }
-  @media (min-width: 768px) {
-    .product-card {
-      height: 100%;
-      max-width: 600px;
-    }
-  }
 </style>

@@ -1,11 +1,11 @@
 <script setup lang="ts">
   definePageMeta({
-    title: 'Subscribe',
+    title: 'Contact Us',
     navOrder: 4,
   })
 
   useHead({
-    title: () => 'Subscribe',
+    title: () => 'Contact Us',
   })
 </script>
 <template>

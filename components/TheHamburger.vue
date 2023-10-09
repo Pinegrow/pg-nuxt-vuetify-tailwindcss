@@ -20,13 +20,4 @@
     ></v-icon>
   </v-icon-btn>
 </template>
-<style lang="scss" scoped>
-  // @use '~/assets/vuetify/settings.scss' with (
-  //   $button-icon-density: 'compact'
-  // );
-
-  // .v-btn--icon {
-  //   width: inherit;
-  //   height: inherit;
-  // }
-</style>
+<style scoped></style>
