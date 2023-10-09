@@ -162,14 +162,6 @@ export default defineNuxtConfig({
     },
   },
 
-  unocss: {
-    presets: [
-      presetIcons({
-        prefix: 'i-', // default prefix, do not change
-      }),
-    ],
-  },
-
   pinia: {
     autoImports: [
       // automatically imports `defineStore`

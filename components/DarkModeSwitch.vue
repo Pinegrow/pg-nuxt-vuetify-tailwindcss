@@ -18,19 +18,16 @@
   //   return false
   // })
 
-  // const vuetify = useNuxtApp().$vuetify
-
   const toggleTheme = () => {
     toggleDark()
     theme.global.name.value = isDark.value ? 'dark' : 'light'
-    // vuetify.theme.global.name.value = isDark.value ? 'dark' : 'light'
   }
 </script>
 <template>
-  <div class="mx-3">
+  <div>
     <v-btn
       variant="tonal"
-      class="!rounded-lg"
+      class="rounded-lg"
       aria-label="Toggle theme"
       @click="toggleTheme"
     >
