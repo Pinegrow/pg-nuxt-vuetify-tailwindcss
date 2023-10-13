@@ -5,7 +5,6 @@
 
   /* Update on using the above technique - We now use SSR HTTP Client hints technique instead of the above - https://vuetify-nuxt-module.netlify.app/guide/server-side-rendering.html#ssr-http-client-hints */
 </script>
-
 <template>
   <v-app>
     <!-- <v-app :theme="isDark ? 'dark' : 'light'"> -->
@@ -14,7 +13,7 @@
         <div>
           <MetaTags />
           <div
-            class="flex flex-col bg-white dark:bg-neutral-950 text-neutral-900 dark:text-neutral-50"
+            class="flex flex-col bg-white dark:bg-neutral-950 text-neutral-900 dark:text-neutral-50 h-screen"
           >
             <!-- <NavBar class="fixed bg-white dark:bg-neutral-950 shadow z-20" /> -->
             <!-- <div class="mt-24 shadow"> -->

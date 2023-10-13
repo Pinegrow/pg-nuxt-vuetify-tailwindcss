@@ -14,19 +14,28 @@ export const useNav = () => {
     // Include only ones that has a title (which are defined via definePageMeta in pages)
     .filter((route) => route.meta.title)
     .filter((route) => route.path !== '/try-now')
-    .sort((a, b) => (a.meta.navOrder > b.meta.navOrder ? 1 : -1))
+    .sort((a, b) =>
+      a.meta.navOrder && b.meta.navOrder && a.meta.navOrder > b.meta.navOrder
+        ? 1
+        : -1,
+    )
     .map((route) => {
       return {
         text: route.meta.title,
         link: route.path,
+        icon: route.meta.icon,
+        type: route.meta.type,
       }
     })
 
   const navlinksFromConfig = site.nav
-  const navlinks = computed(() => navlinksFromConfig || navlinksFromRouter)
+  // TODO: Use navlinksFromConfig if using dynamic routes
+  const navlinks = computed(() => navlinksFromRouter || navlinksFromConfig)
 
   const navlinksPrimary = computed(() => {
-    return navlinks.value.filter((navlink) => navlink.type === 'primary')
+    return navlinks.value.filter(
+      (navlink) => !navlink.type || navlink.type === 'primary',
+    )
   })
 
   const navlinksSecondary = computed(() => {
