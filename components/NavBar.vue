@@ -9,101 +9,75 @@
     to: navlink.link,
     activeClass: 'text-primary',
   }))
+
+  const user = useSupabaseUser()
+  const { auth } = useSupabaseClient()
+
+  const logout = async () => {
+    const { error } = await auth.signOut()
+    if (error) {
+      console.error(error)
+      return
+    }
+    await navigateTo('/login')
+  }
+
+  const name = computed(() => {
+    return user.value?.user_metadata.full_name
+  })
+
+  const profile = computed(() => {
+    return user.value?.user_metadata.avatar_url
+  })
 </script>
 <template>
-  <nav class="container mx-auto px-4">
-    <div class="h-full navbar-grid py-4">
-      <div style="grid-area: logo" class="flex justify-center">
-        <TheLogo />
-      </div>
-      <div
-        data-pg-name="Hamburger"
-        style="grid-area: hamburger"
-        class="md:hidden"
-      >
-        <TheHamburger @click="isMobileMenuOpen = true"></TheHamburger>
-      </div>
-      <div
-        data-pg-name="PrimaryDesktopNav"
-        style="grid-area: primary-nav"
-        class="hidden md:flex"
-      >
-        <PrimaryNav class="md:w-full" />
-      </div>
-      <div
-        data-pg-name="Searchbox"
-        style="grid-area: search"
-        class="flex items-center"
-      >
-        <v-form class="w-full">
-          <v-text-field
-            label="Search..."
-            append-inner-icon="i-material-symbols-search-rounded"
-            hide-details
-            variant="outlined"
-            class="w-full"
-          ></v-text-field>
-        </v-form>
-      </div>
-      <div
-        data-pg-name="Profile"
-        class="flex justify-end space-x-2 md:items-center"
-      >
-        <ProfileActions class="hidden md:flex" />
-        <v-menu>
-          <template #activator="{ props }">
-            <v-btn
-              text="My Button"
-              :icon="true"
-              v-bind="props"
-              variant="tonal"
-              class="md:ml-2"
-            >
-              <v-avatar
-                alt="Avatar"
-                image="https://avatars.githubusercontent.com/u/73772701?v=4"
-                size="large"
-              ></v-avatar>
-            </v-btn>
-          </template>
-          <v-card min-width="300">
-            <v-list>
-              <v-list-item>
-                <div class="flex flex-col items-center my-1 space-x-1 w-full">
-                  <ProfileActions class="flex md:hidden" />
-                  <v-btn class="font-bold my-4 w-fit md:my-2"
-                    >Sign In / Join Us</v-btn
-                  >
-                </div>
-              </v-list-item>
-            </v-list>
-            <v-divider></v-divider>
-            <v-list>
-              <v-list-item
-                v-for="(item, index) in dropdownItems"
-                :key="index"
-                :value="index"
-                :to="item.to"
-                :title="item.label"
-                :prepend-icon="item.icon"
-              >
-              </v-list-item>
-            </v-list>
-          </v-card>
-        </v-menu>
-      </div>
-    </div>
-    <v-navigation-drawer
-      v-model="isMobileMenuOpen"
-      data-pg-name="PrimaryMobileNav"
-      style="grid-area: primary-nav"
-      class="w-80 md:hidden"
-      location="left"
-      temporary
-    >
-      <PrimaryNav class="m-4" />
-    </v-navigation-drawer>
-  </nav>
+    <nav class="container mx-auto px-4">
+        <div class="h-full navbar-grid py-4">
+            <div style="grid-area: logo" class="flex justify-center">
+                <TheLogo/>
+            </div>
+            <div data-pg-name="Hamburger" style="grid-area: hamburger" class="md:hidden">
+                <TheHamburger @click="isMobileMenuOpen = true"></TheHamburger>
+            </div>
+            <div data-pg-name="PrimaryDesktopNav" style="grid-area: primary-nav" class="hidden md:flex">
+                <PrimaryNav class="md:w-full"/>
+            </div>
+            <div data-pg-name="Searchbox" style="grid-area: search" class="flex items-center">
+                <v-form class="w-full">
+                    <v-text-field label="Search..." append-inner-icon="i-material-symbols-search-rounded" hide-details variant="outlined" class="w-full"></v-text-field>
+                </v-form>
+            </div>
+            <div data-pg-name="Profile" class="flex justify-end space-x-2 md:items-center">
+                <ProfileActions class="hidden md:flex"/>
+                <v-menu>
+                    <template #activator="{ props }">
+                        <v-btn text="My Button" :icon="true" v-bind="props" variant="tonal" class="md:ml-2">
+                            <v-avatar alt="Avatar" size="large" :image="profile"></v-avatar>
+                        </v-btn>
+                    </template>
+                    <v-card min-width="300">
+                        <v-list>
+                            <v-list-item>
+                                <div class="flex flex-col items-center my-1 space-x-1 w-full">
+                                    <ProfileActions class="flex md:hidden"/>
+                                    <v-btn class="font-bold my-4 w-fit md:my-2" to="/login">Sign In / Join Us</v-btn>
+                                    <v-btn class="font-bold my-4 w-fit md:my-2" text="Log out" @click="logout"></v-btn>
+                                </div>
+                            </v-list-item>
+                        </v-list>
+                        <v-divider></v-divider>
+                        <v-list>
+                            <v-list-item v-for="(item, index) in dropdownItems" :key="index" :value="index" :to="item.to" :title="item.label" :prepend-icon="item.icon">
+</v-list-item>
+                        </v-list>
+                    </v-card>
+                </v-menu>
+            </div>
+        </div>
+        <v-navigation-drawer v-model="isMobileMenuOpen" data-pg-name="PrimaryMobileNav" style="grid-area: primary-nav" class="w-80 md:hidden" location="left" temporary>
+            <PrimaryNav class="m-4"/>
+        </v-navigation-drawer>
+    </nav>
 </template>
 <style scoped>
   .navbar-grid {

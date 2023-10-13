@@ -1,9 +1,9 @@
 // import { fileURLToPath, URL } from 'node:url'
-import presetIcons from '@unocss/preset-icons'
+// import presetIcons from '@unocss/preset-icons'
 
 export default defineNuxtConfig({
   // ssr: false,
-  devtools: { enabled: false }, // Disable when using Vue devtools
+  devtools: { enabled: true }, // Disable when using Vue devtools
 
   // Look into MetaTags.vue for other flavours
   app: {
@@ -23,10 +23,17 @@ export default defineNuxtConfig({
     // '@nuxtjs/html-validator',
     '@nuxt/image',
     '@vee-validate/nuxt',
-    'vuetify-nuxt-module',
     // '@nuxt/ui',
+    'vuetify-nuxt-module',
+    '@nuxtjs/supabase',
   ],
 
+  // build: {
+  //   transpile: ['websocket'],
+  // },
+  supabase: {
+    redirect: false,
+  },
   pinegrow: {
     liveDesigner: {
       iconPreferredCase: 'unocss', // default value (can be removed), nuxt/ui uses the unocss format for icon names

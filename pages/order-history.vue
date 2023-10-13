@@ -2,6 +2,7 @@
   definePageMeta({
     // layout: 'default',
     title: 'Order History',
+    middleware: 'auth',
   })
 </script>
 

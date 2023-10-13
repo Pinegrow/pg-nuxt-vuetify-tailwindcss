@@ -2,6 +2,7 @@
   definePageMeta({
     // layout: 'default',
     title: 'Returns',
+    middleware: 'auth',
   })
 </script>
 

@@ -8,5 +8,8 @@
   "typescript.tsdk": "node_modules/typescript/lib",
   "search.exclude": {
     "**/_pgbackup": true
+  },
+  "[prisma]": {
+    "editor.defaultFormatter": "Prisma.prisma"
   }
 }

@@ -1,0 +1,67 @@
+datasource db {
+  url      = env("DATABASE_URL")
+  provider = "postgresql"
+}
+
+generator client {
+  provider      = "prisma-client-js"
+  binaryTargets = ["native", "darwin-arm64"]
+}
+
+model ImageSizes {
+  id             Int              @id @default(autoincrement())
+  srcset         String
+  sizes          String?
+  src            String
+  ImageOptimized ImageOptimized[]
+}
+
+model ImageOptimized {
+  id           Int        @id @default(autoincrement())
+  imageSrc     String?
+  imageLazySrc String?
+  bgStyles     String?
+  Product      Product[]
+  imageSizes   ImageSizes @relation(fields: [imageSizesId], references: [id])
+  imageSizesId Int
+}
+
+model Rating {
+  id      Int       @id @default(autoincrement())
+  rate    Int
+  count   Int
+  Product Product[]
+}
+
+model Product {
+  id               Int            @id @default(autoincrement())
+  title            String
+  price            String
+  description      String
+  category         String
+  image            String
+  badge            String
+  shipping         String
+  createdAt        DateTime       @default(now())
+  updatedAt        DateTime       @updatedAt
+  Products         Products?      @relation(fields: [productsId], references: [id])
+  productsId       Int?
+  imageOptimized   ImageOptimized @relation(fields: [imageOptimizedId], references: [id])
+  imageOptimizedId Int
+  rating           Rating         @relation(fields: [ratingId], references: [id])
+  ratingId         Int
+}
+
+model Products {
+  id       Int       @id @default(autoincrement())
+  products Product[]
+  Store    Store[]
+}
+
+model Store {
+  id         Int      @id @default(autoincrement())
+  categories String[]
+  badges     String[]
+  products   Products @relation(fields: [productsId], references: [id])
+  productsId Int
+}

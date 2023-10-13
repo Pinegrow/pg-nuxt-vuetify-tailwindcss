@@ -9,6 +9,11 @@
   "scripts": {
     "dev": "nuxt dev",
     "now": "npm run build && npm run preview",
+    "netlify": "netlify",
+    "prisma:generate": "prisma generate",
+    "prisma:migrate:dev": "prisma migrate dev",
+    "prisma:migrate:reset": "prisma migrate reset",
+    "prisma:migrate:deploy": "prisma migrate deploy",
     "lighthouse": "npx unlighthouse --site https://pg-nuxt-vuetify-tailwindcss.netlify.app",
     "build": "nuxt build",
     "generate": "nuxt generate",
@@ -19,6 +24,9 @@
     "lint:fix": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
     "format": "prettier --write . '!public'"
   },
+  "prisma": {
+    "seed": "node prisma/seed.mjs"
+  },
   "dependencies": {
     "@mdi/js": "^7.2.96",
     "@pinia/nuxt": "^0.4.11",
@@ -26,6 +34,7 @@
     "@vueuse/core": "^10.1.2",
     "lite-youtube-embed": "^0.2.0",
     "pinia": "^2.1.6",
+    "prisma": "^5.4.2",
     "sass": "^1.64.2",
     "vuetify": "^3.3.11"
   },
@@ -36,9 +45,11 @@
     "@nuxt/eslint-config": "^0.1.1",
     "@nuxt/image": "^1.0.0-rc.2",
     "@nuxtjs/html-validator": "^1.5.2",
+    "@nuxtjs/supabase": "^1.1.3",
     "@pinegrow/nuxt-module": "^3.0.21",
     "@pinegrow/tailwindcss-plugin": "^3.0.17",
     "@pinegrow/vuetify-plugin": "^3.0.44",
+    "@prisma/client": "^5.4.2",
     "@tailwindcss/forms": "^0.5.3",
     "@tailwindcss/typography": "^0.5.9",
     "@types/node": "^20.5.0",
@@ -49,6 +60,7 @@
     "autoprefixer": "^10.4.14",
     "eslint": "^8.36.0",
     "eslint-config-prettier": "^8.7.0",
+    "netlify-cli": "^16.6.1",
     "npm-run-all": "^4.1.5",
     "nuxt": "^3.6.5",
     "postcss": "^8.4.22",
@@ -56,7 +68,7 @@
     "rehype-external-links": "^2.1.0",
     "tailwindcss": "^3.3.1",
     "typescript": "^5.0.4",
-    "vuetify-nuxt-module": "^0.5.11"
+    "vuetify-nuxt-module": "^0.5.15"
   },
   "web-types": "web-types.json"
 }
