@@ -1,14 +1,5 @@
 <script setup lang="ts">
-  const { isMobileMenuOpen, isSecondaryMenuOpen } = useMobileMenu()
-  const { navlinksPrimary, navlinksSecondary, currentPath } = useNav()
-
-  const dropdownItems = navlinksSecondary.value.map((navlink) => ({
-    slot: navlink.link.replace(/^\//, '').replaceAll('/', '-'),
-    label: navlink.text,
-    icon: navlink.icon,
-    to: navlink.link,
-    activeClass: 'text-primary',
-  }))
+  const { isMobileMenuOpen } = useMobileMenu()
 </script>
 <template>
   <nav class="container mx-auto px-4">
@@ -79,15 +70,7 @@
             </v-list>
             <v-divider></v-divider>
             <v-list>
-              <v-list-item
-                v-for="(item, index) in dropdownItems"
-                :key="index"
-                :value="index"
-                :to="item.to"
-                :title="item.label"
-                :prepend-icon="item.icon"
-              >
-              </v-list-item>
+              <SecondaryNav />
             </v-list>
           </v-card>
         </v-menu>

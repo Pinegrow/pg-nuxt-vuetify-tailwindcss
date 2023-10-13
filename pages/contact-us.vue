@@ -1,11 +1,12 @@
 <script setup lang="ts">
   definePageMeta({
+    // layout: 'default',
+    // name: 'contact-us',
+    // path: 'contact-us',
+    // alias: 'contact-us',
     title: 'Contact Us',
-    navOrder: 4,
-  })
-
-  useHead({
-    title: () => 'Contact Us',
+    navOrder: '11',
+    type: 'secondary',
   })
 </script>
 <template>

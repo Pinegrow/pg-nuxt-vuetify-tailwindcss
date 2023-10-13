@@ -3,7 +3,7 @@
 </script>
 <template>
   <div>
-    <NuxtLoadingIndicator />
+    <!-- <NuxtLoadingIndicator /> -->
     <NuxtLayout>
       <NuxtPage />
     </NuxtLayout>
