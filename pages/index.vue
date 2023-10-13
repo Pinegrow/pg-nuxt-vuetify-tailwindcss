@@ -10,11 +10,7 @@
 </script>
 <template>
   <main>
-    <HeroSection />
-    <div class="container mx-auto pt-8">
-      <LaunchSale class="mt-8" />
-      <HotDeals class="mt-8" />
-    </div>
+    <main><span>A Fresh Start!</span><DarkModeSwitch /></main>
   </main>
 </template>
 <style scoped></style>

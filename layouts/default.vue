@@ -16,9 +16,9 @@
           <div
             class="flex flex-col bg-white dark:bg-neutral-950 text-neutral-900 dark:text-neutral-50 min-h-screen"
           >
-            <NavBar />
+            <!-- <NavBar /> -->
             <slot />
-            <TheFooter />
+            <!-- <TheFooter /> -->
           </div>
         </div>
       </v-card>
