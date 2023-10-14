@@ -9,8 +9,6 @@
   })
 </script>
 <template>
-  <main>
-    <main><span>A Fresh Start!</span><DarkModeSwitch /></main>
-  </main>
+  <main><span>A Fresh Start!</span><DarkModeSwitch /></main>
 </template>
 <style scoped></style>
