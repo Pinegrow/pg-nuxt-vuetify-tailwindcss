@@ -73,6 +73,18 @@ export default defineNuxtConfig({
     },
   },
 
+  vite: {
+    vue: {
+      template: {
+        transformAssetUrls: {
+          'v-carousel': ['src', ':src'],
+          'v-carousel-item': ['src', ':src'],
+          'v-parallax': ['src', ':src'],
+        },
+      },
+    },
+  },
+
   // Vuetify Nuxt module, thanks Joaquín (userquin)
   vuetify: {
     moduleOptions: {

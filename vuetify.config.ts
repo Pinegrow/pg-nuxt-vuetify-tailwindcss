@@ -29,11 +29,12 @@ export default defineVuetifyConfiguration({
     // 'VExpansionPanelTitle',
   ],
 
-  labComponents: [
-    // 'VDataTable',
-    // 'VDatePickerControls',
-    // 'VDatePickerHeader',
-  ],
+  labComponents: true,
+  // labComponents: [
+  // 'VDataTable',
+  // 'VDatePickerControls',
+  // 'VDatePickerHeader',
+  // ],
 
   aliases: {
     VBtnSquare: 'VBtn', // VBtn is automatically added as a global component
