@@ -77,9 +77,22 @@ export default defineNuxtConfig({
     vue: {
       template: {
         transformAssetUrls: {
-          'v-carousel': ['src', ':src'],
-          'v-carousel-item': ['src', ':src'],
-          'v-parallax': ['src', ':src'],
+          'v-carousel-item': [
+            'src',
+            'lazySrc',
+            'srcset',
+            ':src',
+            ':lazySrc',
+            ':srcset',
+          ],
+          'v-card': [
+            'image',
+            'prependAvatar',
+            'appendAvatar',
+            ':image',
+            ':prependAvatar',
+            ':appendAvatar',
+          ],
         },
       },
     },
