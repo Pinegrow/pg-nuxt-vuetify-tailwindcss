@@ -42,12 +42,13 @@
   <section class="mx-4 my-16 product-details">
     <div class="flex justify-center max-h-96 xl:max-h-[600px]">
       <div class="-m-4 bg-white p-8 rounded-lg w-full">
-        <!-- <v-img
-          :src="product.imageOptimized.imageSrc"
-          :sizes="product.imageOptimized.imageSizes.sizes"
+        <v-img
+          :src="product.imageOptimized.src"
+          :srcset="product.imageOptimized.srcset"
+          :sizes="product.imageOptimized.sizes"
           class="max-h-full"
-        ></v-img> -->
-        <v-img :src="product.image" class="max-h-full"></v-img>
+        />
+        <!-- <v-img :src="product.image" class="max-h-full"></v-img> -->
       </div>
     </div>
     <div class="mt-8 md:mt-0 md:mx-8">

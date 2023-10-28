@@ -1,25 +1,30 @@
 <script setup lang="ts">
-  import { Product } from '../types/store'
+  import type { Product } from '../types/store'
   const { id, title, price, image, imageOptimized, badge, shipping } =
     defineProps<Product>()
 </script>
 <template>
-  <NuxtLink class="m-4 w-full md:w-1/3 lg:w-1/4 xl:w-1/5" :to="`/store/${id}`">
+  <NuxtLink
+    class="m-4 relative w-full md:w-1/3 lg:w-1/4 xl:w-1/5"
+    :to="`/store/${id}`"
+    ><span
+      v-if="badge"
+      class="absolute bg-primary font-serif p-1 right-0 rounded-bl-md rounded-br-none rounded-tl-none rounded-tr-md text-white text-xs z-10"
+      >{{ badge }}</span
+    >
     <v-card border variant="outlined" class="md:h-full">
-      <div v-if="badge" class="absolute right-0 z-10">
-        <v-chip :text="badge" color="primary"></v-chip>
-      </div>
       <div class="h-64 relative">
         <div class="-m-4 bg-white p-8 rounded-lg">
-          <!-- <v-img
-            v-if="imageOptimized"
-            :src="imageOptimized.imageSrc"
-            :srcset="imageOptimized.imageSizes.srcset"
-            :sizes="imageOptimized.imageSizes.sizes"
-            height="250"
-          >
-          </v-img> -->
-          <v-img v-if="image" :src="image" height="250"> </v-img>
+          <div>
+            <v-img
+              v-if="imageOptimized"
+              :src="imageOptimized.src"
+              :srcset="imageOptimized.srcset"
+              :sizes="imageOptimized.sizes"
+              height="250"
+            />
+            <!-- <v-img v-if="image" :src="image" height="250"> </v-img> -->
+          </div>
         </div>
       </div>
       <v-card-text class="mt-14">

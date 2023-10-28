@@ -1,13 +1,6 @@
-<script setup lang="ts">
-  // const props = defineProps({
-  // 	name: {
-  // 		type: String,
-  // 		default: 'TheFooter',
-  // 	},
-  // })
-</script>
+<script setup lang="ts"></script>
 <template>
-  <div class="pb-24 pt-12">
+  <v-footer name="footer" class="pb-24 pt-12">
     <div class="container mx-auto px-8">
       <div class="flex flex-wrap justify-center space-x-8">
         <NuxtLink
@@ -45,6 +38,6 @@
         </NuxtLink>
       </div>
     </div>
-  </div>
+  </v-footer>
 </template>
 <style scoped></style>

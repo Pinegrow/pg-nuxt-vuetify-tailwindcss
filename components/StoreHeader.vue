@@ -8,14 +8,14 @@
 </script>
 <template>
   <div class="overflow-hidden max-h-40">
-    <!-- <v-img
+    <v-img
       height="200"
       cover
-      :src="headerImageOptimized.imageSrc"
-      :sizes="headerImageOptimized.imageSizes.sizes"
-      :srcset="headerImageOptimized.imageSizes.srcset"
-    /> -->
-    <v-img height="200" cover :src="headerImageUrl" />
+      :src="headerImageOptimized.src"
+      :sizes="headerImageOptimized.sizes"
+      :srcset="headerImageOptimized.srcset"
+    />
+    <!-- <v-img height="200" cover :src="headerImageUrl" /> -->
   </div>
 </template>
 <style scoped></style>

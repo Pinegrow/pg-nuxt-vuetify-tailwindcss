@@ -1,23 +1,38 @@
 <script setup lang="ts">
-  import { pg_background_urls } from '~~/themes/pg-tailwindcss/tokens.mjs'
+  import { heroImageUrl } from '@/utils/hero'
 
-  const heroImageUrl =
-    pg_background_urls['design-image-large'] ||
-    pg_background_urls['design-image']
+  const { optimizeImage } = useOptimizeImage()
+  const heroImageOptimized = {
+    alt: `hero`,
+    cover: true,
+    ...optimizeImage(
+      heroImageUrl,
+      /* options */
+      {
+        /* If using local images instead of unsplash url, enable netlify provider */
+        // provider:
+        //     process.env.NODE_ENV === 'production'
+        //       ? 'netlify'
+        //       : null /* defaults to ipx or ipxStatic */,
+        placeholder: false, // placeholder image before the actual image is fully loaded.
+      },
+      true /* return bgStyles */,
+    ),
+  }
 
-  const { optimizeImage, optimizeImages } = useOptimizeImage()
-  const heroImageOptimized = optimizeImage(heroImageUrl)
+  const heroImage = heroImageOptimized.src
+  const bgStyles = heroImageOptimized.bgStyles
 </script>
 <template>
   <section>
-    <!-- <v-img
-      :src="heroImageOptimized.imageSrc"
-      :srcset="heroImageOptimized.imageSizes.srcset"
-      :sizes="heroImageOptimized.imageSizes.sizes"
+    <v-img
+      :src="heroImageOptimized.src"
+      :srcset="heroImageOptimized.srcset"
+      :sizes="heroImageOptimized.sizes"
       :max-height="800"
       cover
-    > -->
-    <v-img :src="heroImageUrl" :max-height="600" cover>
+    >
+      <!-- <v-img :src="heroImageUrl" :max-height="800" cover> -->
       <div class="container flex flex-col h-full justify-end mx-auto">
         <div class="flex flex-col items-end pb-8 px-4 w-full md:pb-20">
           <h2
