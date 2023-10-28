@@ -9,7 +9,7 @@
     :to="`/store/${id}`"
     ><span
       v-if="badge"
-      class="absolute bg-primary font-serif p-1 right-0 rounded-bl-md rounded-br-none rounded-tl-none rounded-tr-md text-white text-xs z-10"
+      class="absolute bg-primary font-serif p-1 right-0 rounded-bl-md rounded-br-none rounded-tl-none rounded-tr-sm text-white text-xs z-10"
       >{{ badge }}</span
     >
     <v-card border variant="outlined" class="md:h-full">
