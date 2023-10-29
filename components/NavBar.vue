@@ -2,8 +2,8 @@
   const { isMobileMenuOpen } = useMobileMenu()
 </script>
 <template>
-  <nav class="container mx-auto px-4">
-    <div class="h-full navbar-grid py-4">
+  <div class="px-4">
+    <nav class="h-full navbar-grid py-4">
       <div style="grid-area: logo" class="flex justify-center">
         <TheLogo />
       </div>
@@ -12,14 +12,14 @@
         style="grid-area: hamburger"
         class="md:hidden"
       >
-        <TheHamburger @click="isMobileMenuOpen = true"></TheHamburger>
+        <NavBarHamburger @click="isMobileMenuOpen = true"></NavBarHamburger>
       </div>
       <div
-        data-pg-name="PrimaryDesktopNav"
+        data-pg-name="NavBarPrimary"
         style="grid-area: primary-nav"
         class="hidden md:flex"
       >
-        <PrimaryNav class="md:w-full" />
+        <NavBarPrimary class="md:w-full" />
       </div>
       <div
         data-pg-name="Searchbox"
@@ -44,11 +44,12 @@
         <v-menu>
           <template #activator="{ props }">
             <v-btn
-              text="My Button"
+              text="Click me"
               :icon="true"
               v-bind="props"
               variant="tonal"
               class="md:ml-2"
+              aria-label="Avatar"
             >
               <v-avatar
                 alt="Avatar"
@@ -70,23 +71,24 @@
             </v-list>
             <v-divider></v-divider>
             <v-list>
-              <SecondaryNav />
+              <NavBarSecondary />
             </v-list>
           </v-card>
         </v-menu>
       </div>
-    </div>
+    </nav>
     <v-navigation-drawer
       v-model="isMobileMenuOpen"
-      data-pg-name="PrimaryMobileNav"
+      name="drawer"
+      data-pg-name="NavBarSecondary"
       style="grid-area: primary-nav"
       class="w-80 md:hidden"
       location="left"
       temporary
     >
-      <PrimaryNav class="m-4" />
+      <NavBarPrimary class="m-4" />
     </v-navigation-drawer>
-  </nav>
+  </div>
 </template>
 <style scoped>
   .navbar-grid {

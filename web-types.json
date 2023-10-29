@@ -7,6 +7,18 @@
     "html": {
       "elements": [
         {
+          "name": "BaseImage",
+          "description": "A simple wrapper of v-img that optimizes the image source by default.",
+          "attributes": [
+            {
+              "name": "fit",
+              "customType": "select",
+              "default": "cover",
+              "options": ["cover", "contain", "fill", "inside", "outside"]
+            }
+          ]
+        },
+        {
           "name": "BaseButtonDemo",
           "description": "Note, this is not a real component in this project, added here just to show an example of how it is defined in web-types.",
           "attributes": [
