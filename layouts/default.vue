@@ -21,8 +21,8 @@
       <!-- https://vuetifyjs.com/en/features/application-layout/
         TheFooter contains the v-footer -->
       <!-- <TheFooter /> -->
+      <TheFooter />
     </v-app>
-    <!-- </div> -->
   </div>
 </template>
 <style></style>
