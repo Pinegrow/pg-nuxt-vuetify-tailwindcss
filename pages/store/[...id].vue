@@ -38,7 +38,7 @@
 
   const selected = ref(colors[0])
 </script>
-<template layout="default">
+<template>
   <section class="mx-4 my-16 product-details">
     <div class="flex justify-center max-h-96 xl:max-h-[600px]">
       <div class="-m-4 bg-white p-8 rounded-lg w-full">
