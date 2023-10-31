@@ -1,4 +1,4 @@
-import { ThemeDefinition } from 'vuetify'
+import type { ThemeDefinition } from 'vuetify'
 import {
   pg_colors,
   // pg_fonts,
