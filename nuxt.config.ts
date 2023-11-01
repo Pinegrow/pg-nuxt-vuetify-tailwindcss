@@ -1,5 +1,5 @@
 // import { fileURLToPath, URL } from 'node:url'
-// import presetIcons from '@unocss/preset-icons'
+import presetIcons from '@unocss/preset-icons'
 
 import site from './site'
 const {
@@ -264,6 +264,14 @@ export default defineNuxtConfig({
       html: true,
       markdown: true,
     },
+  },
+
+  unocss: {
+    presets: [
+      presetIcons({
+        prefix: 'i-', // default prefix, do not change
+      }),
+    ],
   },
 
   pinegrow: {
