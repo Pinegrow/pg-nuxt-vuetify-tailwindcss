@@ -7,7 +7,7 @@
     "html": {
       "elements": [
         {
-          "name": "BaseImage",
+          "name": "VNuxtImage",
           "description": "A simple wrapper of v-img that optimizes the image source by default.",
           "attributes": [
             {

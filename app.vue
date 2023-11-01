@@ -66,7 +66,7 @@
     <HeadAndMeta />
     <!-- We pass image separately so that alias can be transformed by vue plugin, see vite.vue.template.transformAssetUrls in nuxt.config.ts -->
     <OgImage :image="heroImage" v-bind="ogImageOptions" />
-    <!-- <NuxtLoadingIndicator /> -->
+    <NuxtLoadingIndicator />
     <NuxtLayout>
       <NuxtPage />
     </NuxtLayout>

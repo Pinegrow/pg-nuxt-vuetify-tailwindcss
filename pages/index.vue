@@ -35,12 +35,12 @@
   const bgStyles = heroImageOptimized.bgStyles
 </script>
 <template>
-  <main>
+  <div>
     <HeroSection />
     <div class="container mx-auto pt-8">
       <LaunchSale class="mt-8" />
       <HotDeals class="mt-8" />
     </div>
-  </main>
+  </div>
 </template>
 <style scoped></style>
