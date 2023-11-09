@@ -12,14 +12,14 @@
         style="grid-area: hamburger"
         class="md:hidden"
       >
-        <NavBarHamburger @click="isMobileMenuOpen = true"></NavBarHamburger>
+        <NavHamburger @click="isMobileMenuOpen = true"></NavHamburger>
       </div>
       <div
-        data-pg-name="NavBarPrimary"
+        data-pg-name="NavPrimary"
         style="grid-area: primary-nav"
         class="hidden md:flex"
       >
-        <NavBarPrimary class="md:w-full" />
+        <NavPrimary class="md:w-full" />
       </div>
       <div
         data-pg-name="Searchbox"
@@ -71,7 +71,7 @@
             </v-list>
             <v-divider></v-divider>
             <v-list>
-              <NavBarSecondary />
+              <NavSecondary />
             </v-list>
           </v-card>
         </v-menu>
@@ -80,13 +80,13 @@
     <v-navigation-drawer
       v-model="isMobileMenuOpen"
       name="drawer"
-      data-pg-name="NavBarSecondary"
+      data-pg-name="NavSecondary"
       style="grid-area: primary-nav"
       class="w-80 md:hidden"
       location="left"
       temporary
     >
-      <NavBarPrimary class="m-4" />
+      <NavPrimary class="m-4" />
     </v-navigation-drawer>
   </div>
 </template>
