@@ -11,7 +11,7 @@ export default {
   darkMode: 'class',
   plugins: [
     require('@tailwindcss/typography'),
-    require('@tailwindcss/forms'),
+    // require('@tailwindcss/forms'), // conflicts with vuetify, so turned it off
     require('@pinegrow/tailwindcss-plugin').default({
       colors: pg_colors, // primary, secondary etc
       fonts: getFontsWithFallback(pg_fonts),
