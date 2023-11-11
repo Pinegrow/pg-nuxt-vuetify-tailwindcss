@@ -36,12 +36,15 @@
     defineWebPage(),
   ])
 
+  const route = useRoute()
+  const ogImage = computed(() => (route.meta.ogImage || heroImageUrl) as string)
+
   const { optimizeImage } = useOptimizeImage()
-  const heroImageOptimized = {
+  const theOgImageOptimized = {
     alt: `hero`,
     cover: true,
     ...optimizeImage(
-      heroImageUrl,
+      ogImage.value,
       /* options */
       {
         modifiers: {
@@ -59,13 +62,13 @@
     ),
   }
 
-  const heroImage = heroImageOptimized.src
+  const theOgImage = theOgImageOptimized.src
 </script>
 <template>
   <div>
     <HeadAndMeta />
     <!-- We pass image separately so that alias can be transformed by vue plugin, see vite.vue.template.transformAssetUrls in nuxt.config.ts -->
-    <OgImage :image="heroImage" v-bind="ogImageOptions" />
+    <OgImage :image="theOgImage" v-bind="ogImageOptions" />
     <NuxtLoadingIndicator />
     <NuxtLayout>
       <NuxtPage />
