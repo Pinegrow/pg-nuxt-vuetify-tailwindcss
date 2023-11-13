@@ -3,7 +3,7 @@
   const { category } = route.params
 
   const { fetchCategory } = await useProducts()
-  const products = fetchCategory(category.toString())
+  const products = fetchCategory(category?.toString())
 
   const productsWithBadges = products.filter((product) => product.badge)
 </script>

@@ -22,7 +22,7 @@
   const { category } = route.params
 
   const { fetchCategory } = await useProducts()
-  const products = fetchCategory(category.toString())
+  const products = fetchCategory(category?.toString())
 
   const badges = [
     ...new Set(
@@ -35,7 +35,7 @@
   // const filteredBadges = useState('filteredBadges', () => {
   //   return new Set()
   // })
-  const filteredBadges = useState(category.toString(), () => {
+  const filteredBadges = useState(category?.toString() || 'all', () => {
     return new Set()
   })
 
