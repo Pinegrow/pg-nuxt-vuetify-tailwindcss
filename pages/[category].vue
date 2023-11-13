@@ -21,18 +21,8 @@
 
   const { category } = route.params
 
-  const data = await useProducts()
-  const { products: productsRaw } = data.value
-
-  const { optimizeImage } = useOptimizeImage()
-  const products = productsRaw
-    .filter((product) => !category || product.category === category)
-    .map((product) => {
-      return {
-        ...product,
-        imageOptimized: optimizeImage(product.image),
-      }
-    })
+  const { fetchCategory } = await useProducts()
+  const products = fetchCategory(category.toString())
 
   const badges = [
     ...new Set(
