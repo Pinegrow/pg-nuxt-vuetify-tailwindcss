@@ -28,6 +28,9 @@ export default defineNuxtConfig({
   devtools: { enabled: false }, // Disable when using Vue devtools
 
   experimental: {
+    // Required when customizing Vuetify sass variables via configFile with SSR enabled - https://vuetify-nuxt-module.netlify.app/guide/server-side-rendering.html#vuetify-sass-variables
+    //   inlineSSRStyles: false,
+
     componentIslands: true,
   },
 
@@ -112,11 +115,6 @@ export default defineNuxtConfig({
 
     vuetifyOptions: './vuetify.config.ts', // This file is generally configured as configPath with Pinegrow Vuetify Plugin
   },
-
-  // Required when customizing Vuetify sass variables via configFile with SSR enabled - https://vuetify-nuxt-module.netlify.app/guide/server-side-rendering.html#vuetify-sass-variables
-  // experimental: {
-  //   inlineSSRStyles: false,
-  // },
 
   image: {
     // dir: 'assets/images', // doesn't always work, for eg, with vercel etc, https://github.com/nuxt/image/issues/1006. Therefore, we are storing the images in public folder, to have them not processed by vite, but rather by nuxt-image module on-demand
