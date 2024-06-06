@@ -1,0 +1,11 @@
+// Any sass variables of individual V[Component] components
+
+@forward 'vuetify/settings' with (
+  // $icon-size: 10px,
+  $field-border-radius: 8px,
+  // $button-border-radius: 7px,
+  // $switch-inset-track-height: 26px,
+  // $switch-inset-track-width: 46px,
+  // $menu-elevation: 0,
+  // $button-height: 40px,
+);
