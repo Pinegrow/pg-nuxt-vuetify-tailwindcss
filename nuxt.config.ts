@@ -1,4 +1,4 @@
-// import { fileURLToPath, URL } from 'node:url'
+import { fileURLToPath, URL } from 'node:url'
 import presetIcons from '@unocss/preset-icons'
 
 import site from './site'
@@ -15,10 +15,18 @@ const {
 
 export default defineNuxtConfig({
   extends: [
-    './my-nuxt-vuetify-tailwindcss-layer', // NavBar and Footer components
+    './app-nuxt-vuetify-tailwindcss-layer', // NavBar and Footer components
   ],
   // ssr: false,
   devtools: { enabled: false }, // Disable when using Vue devtools
+
+  // Preparation for Nuxt 4 migration
+  srcDir: 'app',
+  serverDir: fileURLToPath(new URL('server', import.meta.url)),
+  dir: {
+    public: fileURLToPath(new URL('public', import.meta.url)),
+    modules: fileURLToPath(new URL('modules', import.meta.url)),
+  },
 
   experimental: {
     // Required when customizing Vuetify sass variables via configFile with SSR enabled - https://vuetify-nuxt-module.netlify.app/guide/server-side-rendering.html#vuetify-sass-variables
@@ -67,8 +75,8 @@ export default defineNuxtConfig({
 
   // Vuetify's global styles
   css: [
-    '~/assets/css/main.css', // Used for global styles. This file is generally configured as cssPath with Pinegrow Vuetify Plugin
-    '~/assets/vuetify/main.scss', // If customizing Vuetify sass variables
+    '@/assets/css/main.css', // Used for global styles. This file is generally configured as cssPath with Pinegrow Vuetify Plugin
+    '@/assets/vuetify/main.scss', // If customizing Vuetify sass variables
     'lite-youtube-embed/src/lite-yt-embed.css',
   ],
 
@@ -299,7 +307,7 @@ export default defineNuxtConfig({
       //     name: 'My Awesome Lib 3.0',
       //     key: 'my-awesome-lib',
       //     pluginPath: fileURLToPath(
-      //       new URL('./my-awesome-lib/web-types.json', import.meta.url),
+      //       new URL('./web-types/my-awesome-lib.json', import.meta.url),
       //     ),
       //   },
       // ],

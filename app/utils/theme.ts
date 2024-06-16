@@ -3,7 +3,7 @@ import {
   pg_colors,
   // pg_fonts,
   // pg_backgrounds,
-} from '../themes/pg-tailwindcss/tokens.mjs'
+} from '../../themes/pg-tailwindcss/tokens.mjs'
 
 // Customize light and dark themes
 const lightTheme: ThemeDefinition = {

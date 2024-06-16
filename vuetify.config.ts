@@ -1,6 +1,6 @@
 // import { md3 } from 'vuetify/blueprints'
 import { defineVuetifyConfiguration } from 'vuetify-nuxt-module/custom-configuration'
-import { lightTheme, darkTheme } from './utils/theme'
+import { lightTheme, darkTheme } from './app/utils/theme'
 
 // https://vuetify-nuxt-module.netlify.app/guide/
 export default defineVuetifyConfiguration({
