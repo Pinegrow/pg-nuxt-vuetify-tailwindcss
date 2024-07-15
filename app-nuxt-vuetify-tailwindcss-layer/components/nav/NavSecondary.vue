@@ -17,7 +17,6 @@
     :to="item.to"
     :title="item.label"
     :prepend-icon="item.icon"
-  >
-  </v-list-item>
+  />
 </template>
 <style scoped></style>

@@ -1,5 +1,5 @@
 export const useProduct = async (productId: number) => {
-  // const { data, error } = await useFetch(
+  // const { data: product, error } = await useFetch(
   //   `/api/store/external-data/${productId}`)
   const { data: product, error } = await useFetch(
     `/api/store/local-data/${productId}`,

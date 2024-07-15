@@ -16,7 +16,7 @@
           : 'i-material-symbols-menu'
       "
       size="20px"
-    ></v-icon>
+    />
   </v-icon-btn>
 </template>
 <style scoped></style>

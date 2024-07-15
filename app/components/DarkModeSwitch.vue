@@ -36,14 +36,12 @@
           v-if="isDark"
           icon="i-material-symbols-dark-mode-outline"
           class="text-2xl"
-        >
-        </v-icon>
+        />
         <v-icon
           v-else
           icon="i-material-symbols-light-mode-outline"
           class="text-2xl"
-        >
-        </v-icon>
+        />
       </transition>
     </v-btn>
   </div>

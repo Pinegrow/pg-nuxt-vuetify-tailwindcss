@@ -43,7 +43,7 @@
 </script>
 
 <template>
-  <v-img v-if="src" v-bind="imgOptions"></v-img>
+  <v-img v-if="src" v-bind="imgOptions" />
 </template>
 
 <style scoped></style>

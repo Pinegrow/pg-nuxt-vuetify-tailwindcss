@@ -12,7 +12,7 @@
         style="grid-area: hamburger"
         class="md:hidden"
       >
-        <NavHamburger @click="isMobileMenuOpen = true"></NavHamburger>
+        <NavHamburger @click="isMobileMenuOpen = true" />
       </div>
       <div
         data-pg-name="NavPrimary"
@@ -33,7 +33,7 @@
             hide-details
             variant="outlined"
             class="w-full"
-          ></v-text-field>
+          />
         </v-form>
       </div>
       <div
@@ -55,7 +55,7 @@
                 alt="Avatar"
                 image="https://avatars.githubusercontent.com/u/73772701?v=4"
                 size="large"
-              ></v-avatar>
+              />
             </v-btn>
           </template>
           <v-card min-width="300">
@@ -69,7 +69,7 @@
                 </div>
               </v-list-item>
             </v-list>
-            <v-divider></v-divider>
+            <v-divider />
             <v-list>
               <NavSecondary />
             </v-list>
