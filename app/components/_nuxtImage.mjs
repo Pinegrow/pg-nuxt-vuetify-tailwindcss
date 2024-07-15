@@ -1,7 +1,7 @@
 // Props are sourced from @nuxt/image's NuxtImg component's defintion
 // Only a subset of props are used, others are commented out (<img> attributes)
 
-let baseImageProps = {
+const _baseImageProps = {
   // input source
   src: { type: String, required: true },
   // modifiers
@@ -65,6 +65,6 @@ const sortObj = (obj) => {
     )
 }
 
-baseImageProps = sortObj(baseImageProps)
+const baseImageProps = sortObj(_baseImageProps)
 
 export { baseImageProps }

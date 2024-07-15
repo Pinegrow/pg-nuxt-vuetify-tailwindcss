@@ -122,11 +122,11 @@ Check out the [deployment documentation](https://nuxt.com/docs/getting-started/d
 - [VeeValidate](https://vee-validate.logaretm.com/v4/integrations/nuxt/) takes care of value tracking, validation, errors, submissions and more.
 - [Nuxt Image](https://image.nuxt.com/) - Plug-and-play image optimization for Nuxt apps.
 - [Nuxt SEO](https://nuxtseo.com/) - Amazing collection of hand-crafted Nuxt Modules for all SEO needs with a unified site config. Includes `nuxt-site-config`, `nuxt-simple-robots`, `nuxt-simple-sitemap`, `nuxt-og-image`, `nuxt-link-checker`, `nuxt-seo-experiments`, `nuxt-schema-org`.
+  - OG images and nuxtseo features can be previewed with nuxt-devtools during development. OG images can also be viewed using URL in this form - `/__og-image__/image/<path>/og.<extension>`
 
 ### Devtools
 
 - [Nuxt Devtools](https://devtools.nuxtjs.org) - Enhance your DX (developer experience) with an amazing set of in-app features.
-  - **ACTION REQUIRED**: Currently deactivated. In `nuxt.config.ts`, uncomment module to activate.
 - [Vue Devtools](https://devtools.vuejs.org/guide/installation.html#standalone) - Official devtools that can be used as a standalone app alongside Vue Designer. It's configured as a Nuxt plugin (only during development).
   - **ACTION REQUIRED**: Currently deactivated. In `plugins/devtools.client.ts`, uncomment to activate.
 
@@ -140,7 +140,7 @@ Check out the [deployment documentation](https://nuxt.com/docs/getting-started/d
 ### Coding Style
 
 - Use Composition API with [`<script setup>` SFC syntax](https://vuejs.org/guide/scaling-up/sfc.html)
-- [ESLint](https://eslint.org) with [@nuxt/eslint-config](https://github.com/nuxt/eslint-config) - opinionated not-so-strict set of linting rules.
+- [ESLint](https://eslint.org) with [@nuxt/eslint](https://eslint.nuxt.com/packages/module) Nuxt ESLint module that adopts ESLint 9 with a new flat config.
 - [Prettier](https://prettier.io) with [eslint-config-prettier](https://github.com/prettier/eslint-config-prettier) - format without conflicting with eslint rules.
 
 ### Typescript

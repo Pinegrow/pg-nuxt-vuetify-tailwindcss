@@ -67,12 +67,12 @@
           :sizes="imageOptimized.sizes"
           class="max-h-full"
         />
-        <v-img v-else :src="image" class="max-h-full"></v-img>
+        <v-img v-else :src="image" class="max-h-full" />
       </div>
     </div>
     <div class="mt-8 md:mt-0 md:mx-8">
       <div class="relative">
-        <v-chip v-if="badge" :text="badge" color="primary"></v-chip>
+        <v-chip v-if="badge" :text="badge" color="primary" />
         <h3 class="mt-2">{{ title }}</h3>
       </div>
       <div class="flex items-center justify-between mt-2">
@@ -85,7 +85,7 @@
               size="small"
               color="secondary"
               half-increments
-            ></v-rating>
+            />
           </div>
           <div class="ml-4">
             <div class="text-sm">{{ rating.count }} reviews</div>
@@ -114,8 +114,7 @@
             item-title="name"
             item-value="id"
             variant="outlined"
-          >
-          </v-select>
+          />
         </div>
         <div class="flex mt-4 w-full">
           <v-btn-square

@@ -12,7 +12,7 @@
     <v-container class="py-8">
       <div class="-tracking-wide flex font-bold justify-center text-5xl">
         <span class="text-center text-primary">Hot Deals</span>
-        <v-icon class="ml-2 text-5xl" icon="i-twemoji-fire"></v-icon>
+        <v-icon class="ml-2 text-5xl" icon="i-twemoji-fire" />
       </div>
       <section
         data-pg-name="Products"

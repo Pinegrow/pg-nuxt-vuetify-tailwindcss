@@ -6,7 +6,7 @@
   <div
     class="flex flex-col justify-center md:space-y-0 space-y-4 md:flex md:flex-row md:items-center md:space-x-4"
   >
-    <TheLogo class="mb-6 md:hidden"></TheLogo>
+    <TheLogo class="mb-6 md:hidden" />
     <NuxtLink
       v-for="(navlink, index) in navlinksPrimary"
       :key="index"

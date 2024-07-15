@@ -9,7 +9,7 @@
           external
           target="_blank"
         >
-          <v-icon icon="i-logos-facebook" class="text-2xl"></v-icon>
+          <v-icon icon="i-logos-facebook" class="text-2xl" />
         </NuxtLink>
         <NuxtLink
           href="https://twitter.com/vuedesigner"
@@ -17,7 +17,7 @@
           external
           target="_blank"
         >
-          <v-icon icon="i-logos-twitter" class="text-2xl"></v-icon>
+          <v-icon icon="i-logos-twitter" class="text-2xl" />
         </NuxtLink>
 
         <NuxtLink
@@ -26,7 +26,7 @@
           external
           target="_blank"
         >
-          <v-icon icon="i-logos-discord-icon" class="text-2xl"></v-icon>
+          <v-icon icon="i-logos-discord-icon" class="text-2xl" />
         </NuxtLink>
         <NuxtLink
           href="https://www.youtube.com/@vuedesigner"
@@ -34,7 +34,7 @@
           external
           target="_blank"
         >
-          <v-icon icon="i-logos-youtube-icon" class="text-2xl"></v-icon>
+          <v-icon icon="i-logos-youtube-icon" class="text-2xl" />
         </NuxtLink>
       </div>
     </div>

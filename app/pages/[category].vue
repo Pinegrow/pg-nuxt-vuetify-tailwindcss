@@ -77,7 +77,7 @@
             :variant="filteredBadges.has(badge) ? 'tonal' : 'outlined'"
             class="mr-2"
             @click="toggleFilter(badge)"
-          ></v-btn>
+          />
         </div>
       </section>
       <section data-pg-name="Products" class="flex flex-wrap justify-center">

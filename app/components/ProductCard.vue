@@ -23,7 +23,7 @@
               :sizes="imageOptimized.sizes"
               height="250"
             />
-            <v-img v-else :src="image" height="250"> </v-img>
+            <v-img v-else :src="image" height="250" />
           </div>
         </div>
       </div>
