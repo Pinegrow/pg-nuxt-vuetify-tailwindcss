@@ -12,7 +12,7 @@ export const useNav = () => {
       (route) => route.name && route.name[0] !== route.name[0].toUpperCase(),
     )
     // Remove dynamic routes
-    // .filter((route) => !route.path.includes(':'))
+    .filter((route) => !route.path.includes(':'))
     // Include only ones that has a title (which are defined via definePageMeta in pages)
     .filter((route) => route.meta.title)
     .filter((route) => route.path !== '/try-now')
@@ -31,9 +31,9 @@ export const useNav = () => {
     })
 
   const navlinksFromConfig = site.nav
-  const navlinks = computed(() => navlinksFromRouter || navlinksFromConfig)
+  // const navlinks = computed(() => navlinksFromRouter || navlinksFromConfig)
   // TODO: Use navlinksFromConfig if using dynamic routes, or customized nav-links
-  // const navlinks = computed(() => navlinksFromConfig || navlinksFromRouter)
+  const navlinks = computed(() => navlinksFromConfig || navlinksFromRouter)
 
   const navlinksPrimary = computed(() => {
     return navlinks.value.filter(
