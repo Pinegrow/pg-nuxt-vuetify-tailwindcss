@@ -28,7 +28,7 @@
     "@vee-validate/nuxt": "^4.13.2",
     "@vueuse/core": "^10.11.0",
     "lite-youtube-embed": "^0.3.2",
-    "nuxt": "^3.12.3",
+    "nuxt": "^3.12.4",
     "pinia": "^2.1.7",
     "sass": "^1.77.8",
     "vuetify": "^3.6.12"
