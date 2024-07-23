@@ -1,6 +1,4 @@
 <script setup lang="ts">
-  // Enforcing css import order - Tailwind is imported here instead of in nuxt.config.ts css, so that it can override all css imports via nuxt.config.ts
-  import '~/assets/css/tailwind.css'
   import site from '~~/site'
   import { heroImageUrl } from '@/utils/hero'
   import { primary, secondary } from '@/utils/colors'
@@ -48,12 +46,7 @@
           height: 600,
           fit: 'fill', // can be cover, contain, fill, inside, outside
         },
-        /* If using local images instead of unsplash url, enable netlify provider */
-        // provider:
-        //     process.env.NODE_ENV === 'production'
-        //       ? 'netlify'
-        //       : null /* defaults to ipx or ipxStatic */,
-        placeholder: false, // placeholder image before the actual image is fully loaded.
+        // placeholder: false, // placeholder image before the actual image is fully loaded.
       },
     ),
   }
