@@ -1,4 +1,6 @@
 <script setup lang="ts">
+  // Enforcing css import order - Tailwind is imported here instead of in nuxt.config.ts css, so that it can override all css imports via nuxt.config.ts
+  import '~/assets/css/tailwind.css'
   import site from '~~/site'
   import { heroImageUrl } from '@/utils/hero'
   import { primary, secondary } from '@/utils/colors'

@@ -8,6 +8,7 @@ export const useProducts = async () => {
   // })
 
   if (error.value) {
+    console.log(error.value)
     throw createError({
       ...error.value,
       statusMessage: `Couldn't fetch products.`,
