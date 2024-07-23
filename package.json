@@ -45,6 +45,7 @@
     "@pinegrow/nuxt-module": "^3.0.60",
     "@pinegrow/tailwindcss-plugin": "^3.0.29",
     "@pinegrow/vuetify-plugin": "^3.0.51",
+    "@resvg/resvg-js": "^2.5.0",
     "@tailwindcss/forms": "^0.5.7",
     "@tailwindcss/typography": "^0.5.13",
     "@types/node": "^20.14.10",
