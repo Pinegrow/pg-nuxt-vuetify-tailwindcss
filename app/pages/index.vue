@@ -6,7 +6,7 @@
     // name: 'index',
     // alias: 'index',
     title: 'Home',
-    description: 'Hot Deals on Fresh Styles!',
+    description: 'Style Up Your Life!',
     navOrder: 1,
     type: 'primary',
     icon: 'i-mdi-home',
