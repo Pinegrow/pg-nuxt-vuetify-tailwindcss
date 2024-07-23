@@ -1,5 +1,5 @@
 import type { Product, Products } from '~~/types/store'
-import products from './data'
+import { products } from '~~/db.json'
 
 products as Products
 
