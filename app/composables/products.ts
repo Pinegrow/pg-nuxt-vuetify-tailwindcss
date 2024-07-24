@@ -6,7 +6,7 @@ export const useProducts = async () => {
   // const { data, error } = await useFetch('/api/store/external-data')
   const { data, error } = await useFetch('/api/store/local-data/all', {
     // Call this endpoint only on the server
-    server: true,
+    // server: true,
   })
 
   /* The above useFetch is a syntactic sugar of the below useAsyncData & $fetch combo */

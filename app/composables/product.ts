@@ -9,7 +9,7 @@ export const useProduct = async (productId: number) => {
     `/api/store/local-data/${productId}`,
     {
       // Call this endpoint only on the server
-      server: true,
+      // server: true,
     },
   )
   /* The above useFetch is a syntactic sugar of the below useAsyncData & $fetch combo */
