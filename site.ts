@@ -7,7 +7,7 @@ export default {
   description: 'Vue Designer Nuxt Vuetify Tailwind CSS',
   logo: 'i-fluent-emoji:shopping-bags',
   author: 'Pinegrow',
-  url: 'https://pg-nuxt-vuetify-tailwindcss.netlify.app',
+  url: 'https://gen--pg-nuxt-vuetify-tailwindcss.netlify.app',
   github: 'https://github.com/pinegrow/pg-nuxt-vuetify-tailwindcss',
   defaultLocale: 'en', // default
   identity: {
