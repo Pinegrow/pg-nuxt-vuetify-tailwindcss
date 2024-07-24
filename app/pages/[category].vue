@@ -28,6 +28,9 @@
   const { fetchProducts } = useProducts()
   const allProducts = await fetchProducts()
   const allProductsRef = ref(allProducts)
+  if (typeof allProductsRef.value == 'string') {
+    allProductsRef.value = JSON.parse(allProductsRef.value)
+  }
   const products = allProductsRef.value.filter(
     (product) => !category || product.category === category,
   )

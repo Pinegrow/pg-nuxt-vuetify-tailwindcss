@@ -18,6 +18,10 @@
   const { fetchProduct } = useProduct()
   const product = await fetchProduct(+productId)
   const productRef = ref(product)
+  if (typeof productRef.value == 'string') {
+    productRef.value = JSON.parse(productRef.value)
+  }
+
   const {
     title,
     price,
