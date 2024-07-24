@@ -15,6 +15,10 @@
   const route = useRoute()
   const { id: productId } = route.params
 
+  // Hint nitro to prerender a JSON file for this endpoint
+  // Keep it on the top before any await calls so that it's within the nuxt context
+  prerenderRoutes(`/api/store/local-data/${+productId}`)
+
   const { fetchProduct } = await useProduct(+productId)
   const {
     title,

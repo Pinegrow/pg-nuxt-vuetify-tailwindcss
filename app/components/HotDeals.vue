@@ -2,6 +2,10 @@
   const route = useRoute()
   const { category } = route.params
 
+  // Hint nitro to prerender a JSON file for this endpoint
+  // Keep it on the top before any await calls so that it's within the nuxt context
+  prerenderRoutes(`/api/store/local-data/all`)
+
   const { fetchCategory } = await useProducts()
   const products = fetchCategory(category?.toString())
 
