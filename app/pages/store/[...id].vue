@@ -26,7 +26,7 @@
     rating,
     badge,
     shipping,
-  } = product.value
+  } = product
 
   useHead({
     title: title || '',
