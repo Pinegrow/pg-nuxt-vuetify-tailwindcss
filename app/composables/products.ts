@@ -1,6 +1,13 @@
 export const useProducts = async () => {
+  // Hint nitro to prerender a JSON file for this endpoint
+  // Keep it on the top before any await calls so that it's within the nuxt context
+  prerenderRoutes(`/api/store/local-data/all`)
+
   // const { data, error } = await useFetch('/api/store/external-data')
-  const { data, error } = await useFetch('/api/store/local-data')
+  const { data, error } = await useFetch('/api/store/local-data/all', {
+    // Call this endpoint only on the server
+    server: true,
+  })
 
   /* The above useFetch is a syntactic sugar of the below useAsyncData & $fetch combo */
   // const { data, error } = await useAsyncData('products', async () => {
