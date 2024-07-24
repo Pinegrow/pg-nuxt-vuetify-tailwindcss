@@ -27,7 +27,8 @@
 
   const { fetchProducts } = useProducts()
   const allProducts = await fetchProducts()
-  const products = allProducts.filter(
+  const allProductsRef = ref(allProducts)
+  const products = allProductsRef.value.filter(
     (product) => !category || product.category === category,
   )
 

@@ -1,7 +1,10 @@
 <script setup lang="ts">
   const { fetchProducts } = useProducts()
   const allProducts = await fetchProducts()
-  const productsWithBadges = allProducts.filter((product) => product.badge)
+  const allProductsRef = ref(allProducts)
+  const productsWithBadges = allProductsRef.value.filter(
+    (product) => product.badge,
+  )
 </script>
 <template>
   <div>

@@ -25,7 +25,7 @@ export const useProducts = () => {
       })
     }
 
-    return products.value
+    return products
   }
 
   return { fetchProducts }

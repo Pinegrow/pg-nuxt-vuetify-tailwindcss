@@ -17,6 +17,7 @@
 
   const { fetchProduct } = useProduct()
   const product = await fetchProduct(+productId)
+  const productRef = ref(product)
   const {
     title,
     price,
@@ -26,7 +27,7 @@
     rating,
     badge,
     shipping,
-  } = product
+  } = productRef.value
 
   useHead({
     title: title || '',
