@@ -25,8 +25,11 @@
 
   const { category } = route.params
 
-  const { fetchCategory } = await useProducts()
-  const products = fetchCategory(category?.toString())
+  const { fetchProducts } = useProducts()
+  const allProducts = await fetchProducts()
+  const products = allProducts.filter(
+    (product) => !category || product.category === category,
+  )
 
   const badges = [
     ...new Set(

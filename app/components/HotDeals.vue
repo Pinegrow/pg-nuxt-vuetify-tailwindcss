@@ -1,15 +1,7 @@
 <script setup lang="ts">
-  const route = useRoute()
-  const { category } = route.params
-
-  // Hint nitro to prerender a JSON file for this endpoint
-  // Keep it on the top before any await calls so that it's within the nuxt context
-  prerenderRoutes(`/api/store/local-data/all`)
-
-  const { fetchCategory } = await useProducts()
-  const products = fetchCategory(category?.toString())
-
-  const productsWithBadges = products.filter((product) => product.badge)
+  const { fetchProducts } = useProducts()
+  const allProducts = await fetchProducts()
+  const productsWithBadges = allProducts.filter((product) => product.badge)
 </script>
 <template>
   <div>
