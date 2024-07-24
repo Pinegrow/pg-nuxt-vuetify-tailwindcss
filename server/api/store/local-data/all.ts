@@ -1,4 +1,4 @@
-import type { Store } from '~~/types/store'
+import type { Products, Store } from '~~/types/store'
 import { products } from '~~/db.json'
 
 export const productData = {
@@ -14,7 +14,7 @@ export const productData = {
   ],
 } as Store
 
-export default defineEventHandler(async (/*event*/): Promise<Store> => {
+export default defineEventHandler(async (/*event*/): Promise<Products> => {
   productData.categories = [
     ...new Set(products.map((product) => product.category)),
   ]
@@ -27,5 +27,5 @@ export default defineEventHandler(async (/*event*/): Promise<Store> => {
     ),
   ]
 
-  return productData
+  return productData.products
 })

@@ -1,7 +1,4 @@
 export const useProduct = () => {
-  // Optimize any image urls in the data contents
-  const { optimizeImage } = useOptimizeImage()
-
   const fetchProduct = async (productId: number) => {
     // Hint nitro to prerender a JSON file for this endpoint
     // Keep it on the top before any await calls so that it's within the nuxt context
@@ -28,12 +25,7 @@ export const useProduct = () => {
       })
     }
 
-    return product.value.image
-      ? {
-          ...product.value,
-          imageOptimized: optimizeImage(product.value.image),
-        }
-      : product.value
+    return product
   }
 
   return { fetchProduct }
