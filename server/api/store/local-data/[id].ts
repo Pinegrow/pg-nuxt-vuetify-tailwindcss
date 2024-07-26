@@ -1,12 +1,10 @@
-import type { Product, Products } from '~~/types/store'
-import { products } from '~~/db.json'
-
-products as Products
+import type { Product } from '~~/types/store'
+import { productData } from './all'
 
 export default defineEventHandler(async (event): Promise<Product> => {
   const { id } = event.context.params
 
-  const product: Maybe<Product> = products.find(
+  const product: Maybe<Product> = productData.products.find(
     (product) => +product.id === +id,
   )
   if (!product) {

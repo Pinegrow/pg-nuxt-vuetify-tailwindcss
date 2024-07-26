@@ -42,6 +42,10 @@ export default defineNuxtConfig({
     componentIslands: true,
   },
 
+  nitro: {
+    preset: 'netlify-static',
+  },
+
   app: {
     baseURL: '/', // defaulted by nuxt
     // Look into HeadAndMeta.vue for the rest

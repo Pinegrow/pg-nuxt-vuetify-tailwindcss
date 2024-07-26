@@ -15,7 +15,9 @@
   const route = useRoute()
   const { id: productId } = route.params
 
-  const { fetchProduct } = await useProduct(+productId)
+  const { fetchProduct } = useProduct()
+  const product = await fetchProduct(+productId)
+
   const {
     title,
     price,
@@ -25,7 +27,7 @@
     rating,
     badge,
     shipping,
-  } = fetchProduct()
+  } = product
 
   useHead({
     title: title || '',

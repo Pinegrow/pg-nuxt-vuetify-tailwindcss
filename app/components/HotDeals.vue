@@ -1,11 +1,7 @@
 <script setup lang="ts">
-  const route = useRoute()
-  const { category } = route.params
-
-  const { fetchCategory } = await useProducts()
-  const products = fetchCategory(category?.toString())
-
-  const productsWithBadges = products.filter((product) => product.badge)
+  const { fetchProducts } = useProducts()
+  const allProducts = await fetchProducts()
+  const productsWithBadges = allProducts.filter((product) => product.badge)
 </script>
 <template>
   <div>

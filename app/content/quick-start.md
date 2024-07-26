@@ -79,6 +79,8 @@ npm run unlighthouse # Uses npx unlighthouse from https://unlighthouse.dev/ to r
 
 ### Deploy to Netlify
 
+This project is built and deployed as a fully static site (SSG with `npm run generate`), with no API calls made from the client side. To build it as an SSR app, update the Nitro preset in `nuxt.config.ts` and build with `npm run build` command.
+
 You can deploy this repo as a site on your own to explore and experiment with, by clicking this button.
 [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/Pinegrow/pg-nuxt-vuetify-tailwindcss)
 
@@ -116,11 +118,13 @@ Check out the [deployment documentation](https://nuxt.com/docs/getting-started/d
 
 - [Pinegrow Nuxt Module](https://www.npmjs.com/package/@pinegrow/nuxt-module) - enables you to live-design your Vue single-file components visually in Vue Designer.
 - [Pinegrow Vuetify Plugin](https://www.npmjs.com/package/@pinegrow/vuetify-plugin) - via Design Panel, enables theme customization (optional) and visual controls for Vuetify utilities. Note: This is an addon that's licensed separately to Pinegrow apps (like Vue Designer).
+- [Pinegrow Tailwind CSS Plugin](https://www.npmjs.com/package/@pinegrow/tailwindcss-plugin) - via Design Panel, enables visual controls customization (automatic) and theme customization (optional).
 - [VueUse](https://vueuse.org/) - collection of essential Vue composition utilities.
 - 🍍 [Pinia](https://pinia.vuejs.org/ssr/nuxt.html) stores for global state management via the `@pinia/nuxt module`. Its light-weight, type-safe, extensible, modular with vue-devtools support.
 - [VeeValidate](https://vee-validate.logaretm.com/v4/integrations/nuxt/) takes care of value tracking, validation, errors, submissions and more.
 - [Nuxt Image](https://image.nuxt.com/) - Plug-and-play image optimization for Nuxt apps.
 - [Nuxt SEO](https://nuxtseo.com/) - Amazing collection of hand-crafted Nuxt Modules for all SEO needs with a unified site config. Includes `nuxt-site-config`, `nuxt-simple-robots`, `nuxt-simple-sitemap`, `nuxt-og-image`, `nuxt-link-checker`, `nuxt-seo-experiments`, `nuxt-schema-org`.
+  - OG images and nuxtseo features can be previewed with nuxt-devtools during development. OG images can also be viewed using URL in this form - `/__og-image__/image/<path>/og.<extension>`
 
 ### Devtools
 

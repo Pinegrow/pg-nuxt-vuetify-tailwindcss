@@ -79,6 +79,8 @@ npm run unlighthouse # Uses npx unlighthouse from https://unlighthouse.dev/ to r
 
 ### Deploy to Netlify
 
+This project is built and deployed as a fully static site (SSG with `npm run generate`), with no API calls made from the client side. To build it as an SSR app, update the Nitro preset in `nuxt.config.ts` and build with `npm run build` command.
+
 You can deploy this repo as a site on your own to explore and experiment with, by clicking this button.
 [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/Pinegrow/pg-nuxt-vuetify-tailwindcss)
 
