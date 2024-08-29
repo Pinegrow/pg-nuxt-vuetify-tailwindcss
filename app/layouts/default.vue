@@ -1,9 +1,9 @@
 <script setup lang="ts">
-  /* Vuetify useTheme will not work with SSR enabled, more info - https://vuetify-nuxt-module.netlify.app/guide/server-side-rendering.html#vuetify-themes */
+  /* Vuetify useTheme will not work with SSR enabled, more info - https://nuxt.vuetifyjs.com/guide/server-side-rendering.html#vuetify-themes */
   // import { useCustomTheme } from '~/composables/custom-theme'
   // const { isDark } = useCustomTheme()
 
-  /* Update on using the above technique - We now use SSR HTTP Client hints technique instead of the above - https://vuetify-nuxt-module.netlify.app/guide/server-side-rendering.html#ssr-http-client-hints */
+  /* Update on using the above technique - We now use SSR HTTP Client hints technique instead of the above - https://nuxt.vuetifyjs.com/guide/server-side-rendering.html#ssr-http-client-hints */
 </script>
 <template>
   <div>

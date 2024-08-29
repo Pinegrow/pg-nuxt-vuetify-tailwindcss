@@ -82,10 +82,17 @@ export default defineNuxtConfig({
     },
   },
 
+  icon: {
+    serverBundle: {
+      // Used in OgImage
+      collections: ['vscode-icons', 'logos'],
+    },
+  },
+
   // Vuetify's global styles
   css: [
     '@/assets/css/main.css', // Used for global styles. This file is generally configured as cssPath with Pinegrow Vuetify Plugin
-    '@/assets/vuetify/main.scss', // If customizing Vuetify sass variables
+    '@/assets/vuetify/main.scss', // If customizing Vuetify global sass variables, ensure disableVuetifyStyles: true with Nuxt Vuetity module
     'lite-youtube-embed/src/lite-yt-embed.css',
   ],
 
@@ -100,10 +107,13 @@ export default defineNuxtConfig({
   // Vuetify Nuxt module, thanks Joaquín (userquin)
   vuetify: {
     moduleOptions: {
+      /* If customizing sass global variables ($utilities, $reset, $color-pack, $body-font-family, etc) */
+      disableVuetifyStyles: true,
       /* If customizing sass variables of vuetify components */
       styles: {
         configFile: 'assets/vuetify/settings.scss',
       },
+
       includeTransformAssetsUrls: {
         NuxtImg: ['src'],
         OgImage: ['image'],

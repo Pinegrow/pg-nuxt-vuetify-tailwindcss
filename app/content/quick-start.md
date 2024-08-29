@@ -98,13 +98,16 @@ Check out the [deployment documentation](https://nuxt.com/docs/getting-started/d
 ### UI Frameworks
 
 - [Vuetify](https://vuetifyjs.com/en/introduction/why-vuetify/) - Hundreds of beautifully handcrafted Vue components, easily customizable with a powerful set of utilities, composables and directives.
-  👉 Note: This template turns off Vuetify utilities, and instead use Tailwind CSS instead for styling.
+
+  - 👉 Note: This template turns off Vuetify utilities, and instead use Tailwind CSS instead for styling.
 
 - [Tailwind CSS](https://tailwindcss.com/docs/guides/nuxtjs#3) - The amazing utility-first CSS framework.
-  👉 Note: This template turns off Vuetify utilities, and instead use Tailwind CSS instead for styling. In order to resolve Vuetify's !important in default theme, tailwind.config.ts includes the `important: true` setting.
 
-- [Nuxt Vuetify Module](https://vuetify-nuxt-module.netlify.app/) - This zero-config Nuxt module helps you set up Vuetify in your Nuxt application in seconds. Provides an amazing abstraction over the necessary setup enabling automatic tree-shaking, ability to use Pure CSS icons (UnoCSS Preset icons), supports Nuxt layers and hooks, and more...
-  - 👉 provides a new icon-set for Vuetify called `unocss-mdi`. In order to use all iconsets in Vue Designer's icon-picker, follow the instructions displayed in Vue Designer's Config Panel under the **Icon Picker** tab. Also refer to the nuxt module's official documentation [here](https://vuetify-nuxt-module.netlify.app/guide/icons/unocss-preset-icons.html).
+  - 👉 Note: This template turns off Vuetify utilities, and instead use Tailwind CSS instead for styling.
+  - **ACTION REQUIRED**: In order to resolve Vuetify's !important in default theme, tailwind.config.ts includes (currently commented-out) the `important: true` setting.
+
+- [Nuxt Vuetify Module](https://nuxt.vuetifyjs.com/) - This zero-config Nuxt module helps you set up Vuetify in your Nuxt application in seconds. Provides an amazing abstraction over the necessary setup enabling automatic tree-shaking, ability to use Pure CSS icons (UnoCSS Preset icons), supports Nuxt layers and hooks, and more...
+  - 👉 provides a new icon-set for Vuetify called `unocss-mdi`. In order to use all iconsets in Vue Designer's icon-picker, follow the instructions displayed in Vue Designer's Config Panel under the **Icon Picker** tab. Also refer to the nuxt module's official documentation [here](https://nuxt.vuetifyjs.com/guide/icons/unocss-preset-icons.html).
 
 ### File-based CMS (markdown)
 

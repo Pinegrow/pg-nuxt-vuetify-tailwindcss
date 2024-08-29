@@ -2,7 +2,7 @@
 import { defineVuetifyConfiguration } from 'vuetify-nuxt-module/custom-configuration'
 import { lightTheme, darkTheme } from './app/utils/theme'
 
-// https://vuetify-nuxt-module.netlify.app/guide/
+// https://nuxt.vuetifyjs.com/guide/
 export default defineVuetifyConfiguration({
   // blueprint: md3,
 
