@@ -36,9 +36,6 @@ export default defineNuxtConfig({
   // },
 
   experimental: {
-    // Required when customizing Vuetify sass variables via configFile with SSR enabled - https://vuetify-nuxt-module.netlify.app/guide/server-side-rendering.html#vuetify-sass-variables
-    //   inlineSSRStyles: false,
-
     componentIslands: true,
   },
 
@@ -65,15 +62,16 @@ export default defineNuxtConfig({
     '@vee-validate/nuxt',
     'vuetify-nuxt-module',
     '@nuxtjs/seo',
-    '@nuxtjs/fontaine',
+    // '@nuxtjs/fontaine',  // blocked by https://github.com/nuxt-modules/fontaine/issues/342
     '@nuxtjs/critters',
     '@nuxt/icon',
     '@nuxt/eslint',
   ],
   // https://dev.to/jacobandrewsky/improving-performance-of-nuxt-with-fontaine-5dim
-  fontMetrics: {
-    fonts: ['Inter', 'Kalam'],
-  },
+  // blocked by https://github.com/nuxt-modules/fontaine/issues/342
+  // fontMetrics: {
+  //   fonts: ['Inter', 'Kalam'],
+  // },
 
   // https://dev.to/jacobandrewsky/optimizing-css-performance-in-nuxt-with-critters-4k8i
   critters: {
@@ -103,15 +101,12 @@ export default defineNuxtConfig({
   vuetify: {
     moduleOptions: {
       /* If customizing sass variables of vuetify components */
-      /* If enabling this, set experimental.inlineSSRStyles to false */
-      // styles: {
-      //   configFile: 'assets/vuetify/settings.scss',
-      // },
+      styles: {
+        configFile: 'assets/vuetify/settings.scss',
+      },
       includeTransformAssetsUrls: {
         NuxtImg: ['src'],
         OgImage: ['image'],
-        'v-carousel-item': ['src', 'lazySrc', 'srcset'],
-        'v-card': ['image', 'prependAvatar', 'appendAvatar'],
       },
 
       ssrClientHints: {

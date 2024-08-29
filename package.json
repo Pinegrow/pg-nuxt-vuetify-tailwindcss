@@ -28,7 +28,6 @@
     "@vueuse/core": "^11.0.3",
     "lite-youtube-embed": "^0.3.3",
     "pinia": "^2.2.2",
-    "sass": "^1.77.8",
     "vuetify": "^3.7.1"
   },
   "devDependencies": {
@@ -60,9 +59,10 @@
     "postcss": "^8.4.41",
     "prettier": "^3.3.3",
     "rehype-external-links": "^3.0.0",
+    "sass-embedded": "^1.77.8",
     "tailwindcss": "^3.4.10",
     "typescript": "^5.5.4",
-    "vuetify-nuxt-module": "^0.17.1"
+    "vuetify-nuxt-module": "https://pkg.pr.new/vuetify-nuxt-module@271"
   },
   "pnpm": {
     "overrides": {
