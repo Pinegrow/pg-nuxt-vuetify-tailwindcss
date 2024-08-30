@@ -32,10 +32,10 @@ npm install #or use pnpm
 
 (or)
 
-If you prefer a blank template (a single empty home page) instead,
+If you prefer a minimal template (a single empty home page) instead,
 
 ```bash
-npx giget@latest gh:pinegrow/pg-nuxt-vuetify-tailwindcss#blank my-nuxt-vuetify-tailwindcss-app #project-name
+npx giget@latest gh:pinegrow/pg-nuxt-vuetify-tailwindcss#minimal my-nuxt-vuetify-tailwindcss-app #project-name
 cd my-nuxt-vuetify-tailwindcss-app
 npm install #or use pnpm
 ```
