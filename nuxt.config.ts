@@ -43,6 +43,10 @@ export default defineNuxtConfig({
   //   preset: 'netlify-static',
   // },
 
+  build: {
+    transpile: ['shiki'], // Workaround as per https://github.com/nuxt/nuxt/issues/28127
+  },
+
   app: {
     baseURL: '/', // defaulted by nuxt
     // Look into HeadAndMeta.vue for the rest
