@@ -64,7 +64,8 @@ export default defineNuxtConfig({
     '@nuxtjs/seo',
     // '@nuxtjs/fontaine',  // blocked by https://github.com/nuxt-modules/fontaine/issues/342
     '@nuxtjs/critters',
-    '@nuxt/icon',
+    // '@nuxt/icon', // Enable once nuxt-icon is removed
+    'nuxt-icon', // To be replaced with @nuxt-icon (above), once NuxtSEO drops using this.
     '@nuxt/eslint',
   ],
   // https://dev.to/jacobandrewsky/improving-performance-of-nuxt-with-fontaine-5dim
@@ -82,12 +83,13 @@ export default defineNuxtConfig({
     },
   },
 
-  icon: {
-    serverBundle: {
-      // Used in OgImage
-      collections: ['vscode-icons', 'logos'],
-    },
-  },
+  /* Enable once nuxt-icon is removed */
+  // icon: {
+  //   componentName: 'NuxtIcon', // Instead of NuxtIcon, prefer using v-icon that uses unocss-icons which is more efficient
+  //   serverBundle: {
+  //     collections: ['vscode-icons', 'logos'],
+  //   },
+  // },
 
   // Vuetify's global styles
   css: [
