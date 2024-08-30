@@ -72,6 +72,7 @@ export default defineNuxtConfig({
     'nuxt-icon', // To be replaced with @nuxt-icon (above), once NuxtSEO drops using this.
     '@nuxt/eslint',
   ],
+
   // https://dev.to/jacobandrewsky/improving-performance-of-nuxt-with-fontaine-5dim
   // blocked by https://github.com/nuxt-modules/fontaine/issues/342
   // fontMetrics: {
@@ -91,7 +92,7 @@ export default defineNuxtConfig({
   // icon: {
   //   componentName: 'NuxtIcon', // Instead of NuxtIcon, prefer using v-icon that uses unocss-icons which is more efficient
   //   serverBundle: {
-  //     collections: ['vscode-icons', 'logos'],
+  //     collections: ['vscode-icons', 'mdi', 'logos'],
   //   },
   // },
 
