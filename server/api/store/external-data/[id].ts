@@ -1,4 +1,4 @@
-import type { Product, Products } from '~~/types/store'
+import type { Product } from '~~/types/store'
 import { productData } from './index'
 
 const apiBaseUrl = 'https://fakestoreapi.com'
