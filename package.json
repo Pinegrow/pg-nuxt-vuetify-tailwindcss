@@ -65,13 +65,5 @@
     "typescript": "^5.5.4",
     "vuetify-nuxt-module": "^0.18.0"
   },
-  "pnpm": {
-    "overrides": {
-      "nuxi": "3.8.4"
-    }
-  },
-  "overrides": {
-    "nuxi": "3.8.4"
-  },
   "web-types": "web-types.json"
 }
