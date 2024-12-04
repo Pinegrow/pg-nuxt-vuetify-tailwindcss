@@ -22,7 +22,6 @@
     "format": "prettier --write \"**/*.{vue,js,jsx,cjs,mjs,ts,tsx,cts,mts,html,css,md,mdx,json}\" !public --ignore-path .gitignore"
   },
   "dependencies": {
-    "@mdi/js": "^7.4.47",
     "@pinia/nuxt": "^0.5.4",
     "@vee-validate/nuxt": "^4.13.2",
     "@vueuse/core": "^11.0.3",
@@ -40,9 +39,9 @@
     "@nuxtjs/fontaine": "^0.4.3",
     "@nuxtjs/html-validator": "^1.8.2",
     "@nuxtjs/seo": "^2.0.0-rc.19",
-    "@pinegrow/nuxt-module": "^3.0.60",
-    "@pinegrow/tailwindcss-plugin": "^3.0.29",
-    "@pinegrow/vuetify-plugin": "^3.0.51",
+    "@pinegrow/nuxt-module": "^3.0.65",
+    "@pinegrow/tailwindcss-plugin": "^3.0.33",
+    "@pinegrow/vuetify-plugin": "^3.0.52",
     "@resvg/resvg-js": "^2.5.0",
     "@tailwindcss/forms": "^0.5.8",
     "@tailwindcss/typography": "^0.5.15",
