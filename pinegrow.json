@@ -498,11 +498,7 @@
     }
   },
   "template_framework_id": "vue",
-  "open-pages": [
-    "app/components/HeroSection.vue",
-    "app/components/HotDeals.vue",
-    "app/components/ProductCard.vue"
-  ],
+  "open-pages": ["app/components/HeroSection.vue"],
   "frameworks": [
     "@nuxt/image",
     "@nuxt/icon",
