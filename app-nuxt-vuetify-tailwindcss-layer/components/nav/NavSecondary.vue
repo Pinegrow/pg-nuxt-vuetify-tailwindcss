@@ -1,11 +1,11 @@
 <script setup lang="ts">
-  const { navlinksSecondary } = useNavMenu()
+  const { navsSecondary } = useNavMenu()
 
-  const dropdownItems = navlinksSecondary.value.map((navlink) => ({
-    slot: navlink.link.replace(/^\//, '').replaceAll('/', '-'),
-    label: navlink.text,
-    icon: navlink.icon,
-    to: navlink.link,
+  const dropdownItems = navsSecondary.map((nav) => ({
+    slot: nav.to.replace(/^\//, '').replaceAll('/', '-'),
+    label: nav.title,
+    icon: nav.icon,
+    to: nav.to,
     activeClass: 'text-primary',
   }))
 </script>
