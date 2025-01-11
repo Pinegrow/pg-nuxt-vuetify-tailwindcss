@@ -4,6 +4,7 @@
   // const { isDark } = useCustomTheme()
 
   /* Update on using the above technique - We now use SSR HTTP Client hints technique instead of the above - https://nuxt.vuetifyjs.com/guide/server-side-rendering.html#ssr-http-client-hints */
+
   useHeadAndMeta()
   useOgImage()
 </script>
