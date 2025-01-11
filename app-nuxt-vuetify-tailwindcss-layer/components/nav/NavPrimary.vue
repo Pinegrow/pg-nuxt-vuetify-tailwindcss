@@ -1,5 +1,5 @@
 <script setup lang="ts">
-  const { navlinksPrimary } = useNavMenu()
+  const { navsPrimary } = useNavMenu()
   const { isMobileMenuOpen } = useMobileMenu()
 </script>
 <template>
@@ -8,15 +8,15 @@
   >
     <TheLogo class="mb-6 md:hidden" />
     <NuxtLink
-      v-for="(navlink, index) in navlinksPrimary"
+      v-for="(nav, index) in navsPrimary"
       :key="index"
-      :to="navlink.link"
+      :to="nav.to"
       class="hover:text-primary underline-offset-8"
       color="gray"
       active-class="text-primary underline"
       exact
       @click="isMobileMenuOpen = false"
-      >{{ navlink.text }}</NuxtLink
+      >{{ nav.title }}</NuxtLink
     >
   </div>
 </template>
