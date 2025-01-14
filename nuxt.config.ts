@@ -19,6 +19,7 @@ export default defineNuxtConfig({
   extends: [
     './app-nuxt-vuetify-tailwindcss-layer', // NavBar and Footer components
   ],
+
   // ssr: false,
   // devtools: { enabled: false }, // enabled by default, disable when using standalone Vue devtools
 
@@ -262,10 +263,12 @@ export default defineNuxtConfig({
     trailingSlash,
     titleSeparator,
   },
+
   robots: {
     // https://nuxtseo.com/robots/api/config#blocknonseobots
     blockNonSeoBots: true,
   },
+
   sitemap: {
     // https://nuxtseo.com/sitemap/guides/i18n#debugging-hreflang
     // Open {{site.url}}/sitemap.xml
@@ -285,6 +288,7 @@ export default defineNuxtConfig({
     // Remove strictNuxtContentPaths if using nuxt-content in documentDriven mode
     strictNuxtContentPaths: true,
   },
+
   ogImage: {
     defaults: {
       extension: 'jpeg',
@@ -297,6 +301,7 @@ export default defineNuxtConfig({
     // disable at a global level
     // runtimeCacheStorage: false,
   },
+
   linkChecker: {
     enabled: false,
     excludeLinks: ['https://twitter.com/vuedesigner'],
@@ -358,4 +363,6 @@ export default defineNuxtConfig({
       // ],
     },
   },
+
+  compatibilityDate: '2025-01-14',
 })
