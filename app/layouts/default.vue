@@ -5,9 +5,23 @@
 
   /* Update on using the above technique - We now use SSR HTTP Client hints technique instead of the above - https://nuxt.vuetifyjs.com/guide/server-side-rendering.html#ssr-http-client-hints */
 
-  useHeadAndMeta()
+  const route = useRoute()
+
+  const pageMeta = computed(() => {
+    return {
+      title: route.meta.title,
+      description: route.meta.description,
+      ogImage: route.meta.ogImage,
+      canonicalUrl: route.meta.canonicalUrl || route.fullPath,
+      generator: route.meta.generator,
+      tags: route.meta.tags,
+    }
+  })
+
+  useHeadAndMeta(pageMeta)
   useOgImage()
 </script>
+
 <template>
   <div>
     <!-- <div class="container mx-auto"> -->

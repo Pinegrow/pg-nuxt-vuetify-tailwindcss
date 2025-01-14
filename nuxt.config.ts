@@ -69,7 +69,7 @@ export default defineNuxtConfig({
     // '@nuxtjs/fontaine',  // blocked by https://github.com/nuxt-modules/fontaine/issues/342
     '@nuxtjs/critters',
     // '@nuxt/icon', // Enable once nuxt-icon is removed
-    'nuxt-icon', // To be replaced with @nuxt-icon (above), once NuxtSEO drops using this.
+    'nuxt-icon', // To be replaced with @nuxt-icon (above), once NuxtSEO drops using this/becomes stable..
     '@nuxt/eslint',
   ],
 
@@ -332,7 +332,6 @@ export default defineNuxtConfig({
   pinegrow: {
     liveDesigner: {
       iconPreferredCase: 'unocss', // default value (can be removed), vuetify-nuxt-module uses the unocss format for icon names
-      devtoolsKey: 'devtoolsKey', // see plugins/devtools.client.ts
       tailwindcss: {
         /* Please ensure that you update the filenames and paths to accurately match those used in your project. */
         configPath: 'tailwind.config.ts',
